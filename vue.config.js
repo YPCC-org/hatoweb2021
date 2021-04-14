@@ -7,7 +7,7 @@ module.exports = {
             entry: 'src/main.js',
             title: "鳩Web",
         }
-    }
+    },
     assetsDir: './',
-    publicPath: './'
+    publicPath: './',
 }
