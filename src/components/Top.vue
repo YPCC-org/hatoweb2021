@@ -32,6 +32,13 @@
                         </v-card-text>
                     </v-card>
                 </v-col>
+                <v-col cols="6">
+                    <v-card outlined style="text-align: center">
+                        <v-card-text>
+                            販売
+                        </v-card-text>
+                    </v-card>
+                </v-col>
             </v-row>
         </v-container>
 
@@ -47,7 +54,7 @@
             <v-card outlined>
                 <v-card-title>お知らせ</v-card-title>
                 <v-card-item>
-                    <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl"/>
+                    <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl" slug="noheader"/>
                 </v-card-item>
             </v-card>
         </v-container>
