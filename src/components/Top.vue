@@ -37,33 +37,35 @@
 
         <v-container>
             <v-card outlined>
-                <v-card-title>お知らせ</v-card-title>
-                <v-list-item>
-                    <v-list-item-icon>
-                        <v-icon>
-                            mdi-information
-                        </v-icon>
-                    </v-list-item-icon>
-                    公式ページができました！
-                </v-list-item>
+                <v-card-title>ご挨拶</v-card-title>
+                <v-card-content>
+                </v-card-content>
             </v-card>
         </v-container>
 
         <v-container>
             <v-card outlined>
-                <v-card-title>ご挨拶</v-card-title>
-                <v-card-content>
-                </v-card-content>
+                <v-card-title>お知らせ</v-card-title>
+                <v-card-item>
+                    <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl"/>
+                </v-card-item>
             </v-card>
         </v-container>
     </div>
 </template>
 
 <script>
+import { Timeline } from "vue-tweet-embed";
 export default {
   name: 'Top',
-  components: {},
+  components: {
+    Timeline
+  },
   data: () => ({
+    user_id: "yashiropcclub"
   }),
 };
 </script>
+
+<style>
+</style>
