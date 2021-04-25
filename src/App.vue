@@ -15,7 +15,7 @@
             </v-btn>
         </v-app-bar>
 
-            <v-navigation-drawer
+        <v-navigation-drawer
         v-model="drawer"
         absolute
         temporary>
@@ -41,12 +41,6 @@
                     </v-list-item>
                 </v-list-item-group>
             </v-list>
-            <v-footer v-bind="localAttrs" absolute>
-                    2021<br>
-                    屋代高校<br>
-                    鳩祭実行委員会<br>
-                    PC同好会結成会<br>
-            </v-footer>
         </v-navigation-drawer>
 
         <router-view></router-view>

@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <!-- カルーセル(トップの切り替え可能な画像) -->
         <v-container>
             <v-carousel
@@ -19,7 +20,7 @@
                 <v-col cols="6" v-for="link_button in link_buttons" :key="link_button.link">
                     <v-card outlined style="text-align: center" :to="link_button.link">
                         <v-card-text>
-                            {{ link_button.txt }}
+                            {{ link_button.text }}
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -30,8 +31,6 @@
         <v-container>
             <v-card outlined>
                 <v-card-title>ご挨拶</v-card-title>
-                <v-card-content>
-                </v-card-content>
             </v-card>
         </v-container>
 
@@ -39,11 +38,10 @@
         <v-container>
             <v-card outlined>
                 <v-card-title>お知らせ</v-card-title>
-                <v-card-item>
-                    <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl" slug="noheader"/>
-                </v-card-item>
+                <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl" slug="noheader"/>
             </v-card>
         </v-container>
+
     </div>
 </template>
 
@@ -64,10 +62,10 @@ export default {
     ],
 
     link_buttons: [
-        { txt: "クラス展", link: "/class"},
-        { txt: "スケジュール", link: ""},
-        { txt: "お知らせ", link: ""},
-        { txt: "販売", link: ""},
+        { text: "クラス展", link: "/class"},
+        { text: "スケジュール", link: ""},
+        { text: "お知らせ", link: ""},
+        { text: "販売", link: ""},
     ],
   }),
 };
