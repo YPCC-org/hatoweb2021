@@ -1,16 +1,14 @@
 <template>
     <div>
+        <!-- カルーセル(トップの切り替え可能な画像) -->
         <v-container>
             <v-carousel
             :height="carousel_height"
             hide-delimiter-background
             delimiter-icon="mdi-bird"
             >
-                <v-carousel-item>
-                    <v-img contain src="@/assets/top.png" :max-height="carousel_height"></v-img>
-                </v-carousel-item>
-                <v-carousel-item>
-                    <v-img contain src="@/assets/top2.png" :max-height="carousel_height"></v-img>
+                <v-carousel-item v-for="carousel_image in carousel_images" :key="carousel_image.src">
+                    <v-img contain :src="carousel_image.src" :max-height="carousel_height"></v-img>
                 </v-carousel-item>
             </v-carousel>
         </v-container>
@@ -80,6 +78,10 @@ export default {
   data: () => ({
     user_id: "twitter",
     carousel_height: 200,
+    carousel_images: [
+        { src: require("@/assets/top.png")},
+        { src: require("@/assets/top2.png")},
+    ],
   }),
 };
 </script>
