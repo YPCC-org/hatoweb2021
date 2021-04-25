@@ -49,6 +49,7 @@
             </v-row>
         </v-container>
 
+        <!-- ご挨拶 -->
         <v-container>
             <v-card outlined>
                 <v-card-title>ご挨拶</v-card-title>
@@ -57,6 +58,7 @@
             </v-card>
         </v-container>
 
+        <!-- お知らせ用Twitter TL-->
         <v-container>
             <v-card outlined>
                 <v-card-title>お知らせ</v-card-title>
