@@ -19,11 +19,7 @@
                 <v-container>
                     <v-row>
                         <v-col cols="6" v-for="class_card in card.classes" :key="class_card.text">
-                            <v-card outlined style="text-align: center">
-                                <v-card-text>
-                                    {{ class_card.text }}
-                                </v-card-text>
-                            </v-card>
+                            <classCard :text="class_card.text"></classCard>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -34,9 +30,12 @@
 </template>
 
 <script>
+import classCard from "@/components/Class-card.vue";
 export default {
   name: 'Class',
-  components: {},
+  components: {
+    classCard
+  },
   data: () => ({
     cards: [
         {
