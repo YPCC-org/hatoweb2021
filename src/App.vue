@@ -8,6 +8,11 @@
                 鳩祭
             </v-toolbar-title>
             <v-spacer></v-spacer>
+            <v-btn icon link href="https://www.instagram.com/p/CNo7BAVBkJN/">
+                <v-icon>
+                    mdi-instagram
+                </v-icon>
+            </v-btn>
             <v-btn icon link href="https://twitter.com/YashiroPCClub">
                 <v-icon>
                     mdi-twitter
