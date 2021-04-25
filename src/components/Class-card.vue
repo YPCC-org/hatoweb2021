@@ -6,16 +6,21 @@
         elevation="3"
         style="text-align: center"
         @click="popupEnable = true">
+            <v-img contain height="100%" :src="src"></v-img>
             <v-card-text>
-                {{ text }}
+                {{ title }}
             </v-card-text>
         </v-card>
 
         <v-dialog v-model="popupEnable">
             <v-card style="height: 800">
+                <v-img contain height="100%" :src="src"></v-img>
                 <v-card-title>
-                    {{ text }}の展示
+                    {{ title }}
                 </v-card-title>
+                <v-card-text style="white-space: pre-wrap">
+                    {{ text }}
+                </v-card-text>
             </v-card>
         </v-dialog>
 
@@ -25,7 +30,7 @@
 <script>
 export default {
   name: 'Class-card',
-  props: ['text'],
+  props: ['title', 'src', 'text'],
   components: {
   },
   data: () => ({

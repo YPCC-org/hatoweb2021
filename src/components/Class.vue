@@ -19,7 +19,10 @@
                 <v-container>
                     <v-row>
                         <v-col cols="6" v-for="class_card in card.classes" :key="class_card.text">
-                            <classCard :text="class_card.text"></classCard>
+                            <classCard
+                            :title="class_card.title"
+                            :src="class_card.src"
+                            :text="class_card.text"></classCard>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -40,53 +43,55 @@ export default {
     cards: [
         {
             id: 1, grade: "中1", classes: [
-                { text: "1-A" },
-                { text: "1-B" },
+                { title: "1-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                text: "ここには1-Aのクラス展の説明が入ります\n改行も\n可能です"
+                },
+                { title: "1-B", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
         {
             id: 2, grade: "中2", classes: [
-                { text: "2-A" },
-                { text: "2-B" },
+                { title: "2-A", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-B", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
         {
             id: 3, grade: "中3", classes: [
-                { text: "3-A" },
-                { text: "3-B" },
+                { title: "3-A", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-B", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
         {
             id: 4, grade: "高1", classes: [
-                { text: "1-1" },
-                { text: "1-2" },
-                { text: "1-3" },
-                { text: "1-4" },
-                { text: "1-5" },
-                { text: "1-6" },
-                { text: "1-7" },
+                { title: "1-1", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-2", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-3", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-4", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-5", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-6", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "1-7", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
         {
             id: 5, grade: "高2", classes: [
-                { text: "2-1" },
-                { text: "2-2" },
-                { text: "2-3" },
-                { text: "2-4" },
-                { text: "2-5" },
-                { text: "2-6" },
-                { text: "2-7" },
+                { title: "2-1", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-2", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-3", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-4", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-5", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-6", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "2-7", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
         {
             id: 6, grade: "高3", classes: [
-                { text: "3-1" },
-                { text: "3-2" },
-                { text: "3-3" },
-                { text: "3-4" },
-                { text: "3-5" },
-                { text: "3-6" },
-                { text: "3-7" },
+                { title: "3-1", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-2", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-3", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-4", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-5", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-6", src: require("@/assets/class_image/1/1-1.jpg") },
+                { title: "3-7", src: require("@/assets/class_image/1/1-1.jpg") },
             ]
         },
     ],
