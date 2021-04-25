@@ -2,13 +2,20 @@
     <div>
         <v-container>
             <v-carousel
-            height="250"
-            hide-delimiters
+            :height="carousel_height"
+            hide-delimiter-background
+            delimiter-icon="mdi-bird"
             >
-                <v-carousel-item src="@/assets/top.png"></v-carousel-item>
+                <v-carousel-item>
+                    <v-img contain src="@/assets/top.png" :max-height="carousel_height"></v-img>
+                </v-carousel-item>
+                <v-carousel-item>
+                    <v-img contain src="@/assets/top2.png" :max-height="carousel_height"></v-img>
+                </v-carousel-item>
             </v-carousel>
         </v-container>
 
+        <!-- ページへのリンク -->
         <v-container>
             <v-row>
                 <v-col cols="6">
@@ -69,7 +76,8 @@ export default {
     Timeline
   },
   data: () => ({
-    user_id: "yashiropcclub"
+    user_id: "twitter",
+    carousel_height: 200,
   }),
 };
 </script>
