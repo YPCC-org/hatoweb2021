@@ -37,7 +37,11 @@
         <!-- お知らせ用Twitter TL-->
         <v-container>
             <v-card outlined>
-                <v-card-title>お知らせ</v-card-title>
+                <v-card-title>
+                    お知らせ
+                    <v-spacer></v-spacer>
+                    <v-icon >mdi-twitter</v-icon>
+                </v-card-title>
                 <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl" slug="noheader"/>
             </v-card>
         </v-container>
