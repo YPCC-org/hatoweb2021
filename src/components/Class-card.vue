@@ -4,11 +4,28 @@
         <v-card
         outlined
         elevation="3"
-        style="text-align: center"
         @click="popupEnable = true">
             <v-img contain height="100%" :src="src"></v-img>
-            <v-card-text>
+            <v-card-subtitle>
                 {{ title }}
+            </v-card-subtitle>
+            <v-card-text>
+                <v-chip
+                color="green"
+                outlined
+                x-small
+                v-if="isOpen"
+                >
+                    Open
+                </v-chip>
+                <v-chip
+                color="red"
+                outlined
+                x-small
+                v-if="!isOpen"
+                >
+                    Closed
+                </v-chip>
             </v-card-text>
         </v-card>
 
@@ -30,7 +47,7 @@
 <script>
 export default {
   name: 'Class-card',
-  props: ['title', 'src', 'text'],
+  props: ['title', 'src', 'text', 'isOpen'],
   components: {
   },
   data: () => ({
