@@ -20,7 +20,7 @@
                         </v-icon>
                     </template>
                     <v-carousel-item v-for="carousel_image in carousel_images" :key="carousel_image.src">
-                        <v-img :src="carousel_image.src" :max-height="carousel_height"></v-img>
+                        <v-img contain :src="carousel_image.src" :max-height="carousel_height"></v-img>
                     </v-carousel-item>
                 </v-carousel>
             </v-card>
