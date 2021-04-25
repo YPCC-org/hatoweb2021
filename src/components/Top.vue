@@ -81,8 +81,8 @@ export default {
 
     carousel_height: 200,
     carousel_images: [
-        { src: require("@/assets/top.png")},
-        { src: require("@/assets/top2.png")},
+        { src: require("@/assets/carousel/top.png")},
+        { src: require("@/assets/carousel/top2.png")},
     ],
 
     link_buttons: [
