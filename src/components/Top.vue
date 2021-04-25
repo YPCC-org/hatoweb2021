@@ -16,31 +16,10 @@
         <!-- ページへのリンク -->
         <v-container>
             <v-row>
-                <v-col cols="6">
-                    <v-card outlined style="text-align: center" to="/class">
+                <v-col cols="6" v-for="link_button in link_buttons" :key="link_button.link">
+                    <v-card outlined style="text-align: center" :to="link_button.link">
                         <v-card-text>
-                            クラス展
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="6">
-                    <v-card outlined style="text-align: center">
-                        <v-card-text>
-                            スケジュール
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="6">
-                    <v-card outlined style="text-align: center">
-                        <v-card-text>
-                            お知らせ
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-                <v-col cols="6">
-                    <v-card outlined style="text-align: center">
-                        <v-card-text>
-                            販売
+                            {{ link_button.txt }}
                         </v-card-text>
                     </v-card>
                 </v-col>
@@ -77,10 +56,18 @@ export default {
   },
   data: () => ({
     user_id: "twitter",
+
     carousel_height: 200,
     carousel_images: [
         { src: require("@/assets/top.png")},
         { src: require("@/assets/top2.png")},
+    ],
+
+    link_buttons: [
+        { txt: "クラス展", link: "/class"},
+        { txt: "スケジュール", link: ""},
+        { txt: "お知らせ", link: ""},
+        { txt: "販売", link: ""},
     ],
   }),
 };
