@@ -26,6 +26,7 @@
         temporary>
             <v-list
             nav
+            shaped
             dense>
                 <v-list-item-group>
                     <v-list-item link to="/">
