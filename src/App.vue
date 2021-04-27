@@ -27,8 +27,7 @@
             <v-list
             nav
             dense>
-                <v-list-item-group
-                v-model="group">
+                <v-list-item-group>
                     <v-list-item link to="/">
                         <v-list-item-title>トップページ</v-list-item-title>
                     </v-list-item>
