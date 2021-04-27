@@ -1,5 +1,5 @@
 <template>
-    <v-components>
+    <div>
 
         <!-- タブUI -->
         <v-tabs
@@ -17,11 +17,11 @@
         <v-tabs-items v-model="selected_tab">
             <v-tab-item v-for="card in cards" :key="card.id">
                 <v-container>
-                    <c-container>
+                    <div>
                         <v-checkbox
                         v-model="is_show_closed"
                         label="開店中のみ"></v-checkbox>
-                    </c-container>
+                    </div>
                     <v-row>
                         <v-col
                         cols="6"
@@ -40,15 +40,20 @@
             </v-tab-item>
         </v-tabs-items>
 
-    </v-components>
+    </div>
 </template>
 
 <script>
 import classCard from "@/components/Class-card.vue";
+import { mapState } from "vuex";
+
 export default {
   name: 'Class',
   components: {
     classCard
+  },
+  computed: {
+    ...mapState(['posts'])
   },
   data: () => ({
     cards: [
