@@ -19,7 +19,7 @@
                             mdi-chevron-right
                         </v-icon>
                     </template>
-                    <v-carousel-item v-for="carousel_image in carousel_images" :key="carousel_image.src">
+                    <v-carousel-item v-for="carousel_image in carousel_images" v-bind:key="carousel_image.src">
                         <v-img contain :src="carousel_image.src" :max-height="carousel_height"></v-img>
                     </v-carousel-item>
                 </v-carousel>
@@ -29,7 +29,7 @@
         <!-- ページへのリンク -->
         <v-container>
             <v-row>
-                <v-col cols="6" v-for="link_button in link_buttons" :key="link_button.link">
+                <v-col cols="6" v-for="link_button in link_buttons" v-bind:key="link_button.link">
                     <v-card
                     outlined
                     elevation="3"
@@ -62,8 +62,13 @@
                     <v-spacer></v-spacer>
                     <v-icon >mdi-twitter</v-icon>
                 </v-card-title>
-                <Timeline :id="user_id" sourceType="profile" :options="{ tweetLimit: '3' }" widget-class="tweet-tl" slug="noheader"/>
-            </v-card>
+                <Timeline
+                :id="user_id"
+                sourceType="profile"
+                :options="{ tweetLimit: '3' }"
+                widget-class="tweet-tl"
+                slug="noheader"/>
+</v-card>
         </v-container>
 
     </div>
@@ -71,6 +76,7 @@
 
 <script>
 import { Timeline } from "vue-tweet-embed";
+
 export default {
   name: 'Top',
   components: {
@@ -87,9 +93,9 @@ export default {
 
     link_buttons: [
         { text: "クラス展", link: "/class"},
-        { text: "スケジュール", link: ""},
-        { text: "お知らせ", link: ""},
-        { text: "販売", link: ""},
+        /* { text: "スケジュール", link: ""}, */
+        /* { text: "お知らせ", link: ""}, */
+        /* { text: "販売", link: ""}, */
     ],
   }),
 };
