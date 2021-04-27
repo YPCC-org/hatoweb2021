@@ -26,7 +26,7 @@
                         <v-col
                         cols="6"
                         v-for="class_card in card.classes.filter(c => (c.isOpen == true) || (!is_show_closed))"
-                        :key="class_card.text"
+                        :key="class_card.key"
                         >
                             <classCard
                             :title="class_card.title"
@@ -53,35 +53,35 @@ export default {
     classCard
   },
   computed: {
-    ...mapState(['posts'])
+    ...mapState(['class_ten'])
   },
   data: () => ({
     cards: [
         {
             id: 1, grade: "中学", classes: [
                 {
-                    title: "1-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "1A", title: "1-A", src: require("@/assets/class_image/1/1-1.jpg"),
                     text: "ここには1-Aのクラス展の説明が入ります\n改行も\n可能です",
                     isOpen: true
                 },
                 {
-                    title: "1-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "1B", title: "1-B", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: false
                 },
                 {
-                    title: "2-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "2A", title: "2-A", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "2B", title: "2-B", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "3-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "3A", title: "3-A", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: false
                 },
                 {
-                    title: "3-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "3B", title: "3-B", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
             ]
@@ -89,31 +89,31 @@ export default {
         {
             id: 2, grade: "高1", classes: [
                 {
-                    title: "1-1", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "11", title: "1-1", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-2", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "12", title: "1-2", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-3", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "13", title: "1-3", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-4", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "14", title: "1-4", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-5", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "15", title: "1-5", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-6", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "16", title: "1-6", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "1-7", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "17", title: "1-7", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
             ]
@@ -121,31 +121,31 @@ export default {
         {
             id: 3, grade: "高2", classes: [
                 {
-                    title: "2-1", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "21", title: "2-1", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-2", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "22", title: "2-2", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-3", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "23", title: "2-3", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-4", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "24", title: "2-4", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-5", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "25", title: "2-5", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-6", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "26", title: "2-6", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
                 {
-                    title: "2-7", src: require("@/assets/class_image/1/1-1.jpg"),
+                    key: "27", title: "2-7", src: require("@/assets/class_image/1/1-1.jpg"),
                     isOpen: true
                 },
             ]
