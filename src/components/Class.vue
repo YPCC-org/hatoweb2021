@@ -78,7 +78,7 @@ export default {
         axios
             .get('https://hatoweb-api.herokuapp.com/class_ten')
             .then(response => this.setClasstenApi(response));
-        this.apiIntervalId = setInterval(this.getClasstenApi, 10000);
+        this.apiIntervalId = setInterval(this.getClasstenApi, 600000);
     },
     beforeDestroy () {
       console.log('clearInterval');
