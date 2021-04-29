@@ -75,7 +75,9 @@ export default {
         },
     },
     mounted () {
-        this.getClasstenApi();
+        axios
+            .get('https://hatoweb-api.herokuapp.com/class_ten')
+            .then(response => this.setClasstenApi(response));
         this.apiIntervalId = setInterval(this.getClasstenApi, 10000);
     },
     beforeDestroy () {
@@ -87,6 +89,7 @@ export default {
       class_ten_api: "",
       cards: [
           {
+            // TODO 開店中かの判定を作成する
               id: 1, grade: "中学", classes: [
                   {
                       key: "1A", title: "1-A", src: require("@/assets/class_image/1/1-1.jpg"),
