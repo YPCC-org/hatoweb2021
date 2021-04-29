@@ -62,29 +62,20 @@
                     <v-spacer></v-spacer>
                     <v-icon >mdi-twitter</v-icon>
                 </v-card-title>
-                <Timeline
-                :id="user_id"
-                sourceType="profile"
-                :options="{ tweetLimit: '3' }"
-                widget-class="tweet-tl"
-                slug="noheader"/>
-</v-card>
+                <v-card-text>
+                </v-card-text>
+            </v-card>
         </v-container>
 
     </div>
 </template>
 
 <script>
-import { Timeline } from "vue-tweet-embed";
-
 export default {
   name: 'Top',
   components: {
-    Timeline
   },
   data: () => ({
-    user_id: "twitter",
-
     carousel_height: 200,
     carousel_images: [
         { src: require("@/assets/carousel/top.png")},
