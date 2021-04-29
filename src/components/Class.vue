@@ -17,12 +17,12 @@
         <v-tabs-items v-model="selected_tab">
             <v-tab-item v-for="card in cards" :key="card.id">
                 <v-container>
-                    <v-container>
-                        <v-checkbox
-                        v-model="is_show_closed"
-                        hide-details
-                        label="開店中のみ"></v-checkbox>
-                    </v-container>
+                    <v-checkbox
+                    v-model="is_show_closed"
+                    hide-details
+                    label="開店中のみ"></v-checkbox>
+                </v-container>
+                <v-container>
                     <v-row>
                         <v-col
                         cols="6"
@@ -67,9 +67,11 @@ export default {
         },
         // APIから値を取得
         getClasstenApi: function () {
-            axios
-                .get('https://hatoweb-api.herokuapp.com/class_ten')
-                .then(response => this.setClasstenApi(response));
+            if (document.hasFocus()) {
+                axios
+                    .get('https://hatoweb-api.herokuapp.com/class_ten')
+                    .then(response => this.setClasstenApi(response));
+            }
         },
     },
     mounted () {
