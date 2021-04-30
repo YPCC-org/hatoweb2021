@@ -63,6 +63,13 @@
                     <v-icon>mdi-information</v-icon>
                 </v-card-title>
                 <v-card-text>
+                    <v-list dense>
+                        <v-list-item-group v-for="(info, index) in infoTexts" v-bind:key="index">
+                            <v-list-item>
+                                {{ info.title }}
+                            </v-list-item>
+                        </v-list-item-group>
+                    </v-list>
                 </v-card-text>
             </v-card>
         </v-container>
@@ -71,11 +78,19 @@
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   name: 'Top',
+  mounted () {
+    axios
+      .get('https://hatoweb-api.herokuapp.com/notif')
+      .then(response => (this.infoTexts = response.data));
+  },
   components: {
   },
   data: () => ({
+    infoTexts: {},
     carousel_height: 200,
     carousel_images: [
         { src: require("@/assets/carousel/top.png")},
