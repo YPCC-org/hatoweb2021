@@ -52,7 +52,7 @@
             </v-card>
         </v-container>
 
-        <!-- お知らせ用Twitter TL-->
+        <!-- お知らせ -->
         <v-container>
             <v-card
             elevation="3"
@@ -60,7 +60,7 @@
                 <v-card-title>
                     お知らせ
                     <v-spacer></v-spacer>
-                    <v-icon >mdi-twitter</v-icon>
+                    <v-icon>mdi-information</v-icon>
                 </v-card-title>
                 <v-card-text>
                 </v-card-text>
