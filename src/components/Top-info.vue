@@ -18,7 +18,7 @@
                     {{ formatedTime.mm }}/{{ formatedTime.dd }}
                     {{ formatedTime.hh }}:{{ formatedTime.mi }}
                 </v-card-subtitle>
-                <v-card-text>
+                <v-card-text style="white-space: pre-wrap">
                     {{ text }}
                 </v-card-text>
             </v-card>
