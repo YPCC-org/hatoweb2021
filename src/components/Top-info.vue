@@ -4,7 +4,7 @@
         <v-list-item @click="popupEnable = true">
             {{ title }}
             <v-spacer></v-spacer>
-            {{ new Date(time).getHours() }}:{{ new Date(time).getMinutes() }}
+                {{ formated.hh }}:{{ formated.mi }}
         </v-list-item>
 
         <v-dialog v-model="popupEnable">
@@ -15,8 +15,8 @@
                     <v-icon>mdi-information</v-icon>
                 </v-card-title>
                 <v-card-subtitle>
-                    {{ new Date(time).getMonth() + 1 }}/{{ new Date(time).getDate() }}
-                    {{ new Date(time).getHours() }}:{{ new Date(time).getMinutes() }}
+                    {{ formated.mm }}/{{ formated.dd }}
+                    {{ formated.hh }}:{{ formated.mi }}
                 </v-card-subtitle>
                 <v-card-text>
                     {{ text }}
@@ -28,10 +28,24 @@
 </template>
 
 <script>
+function formatDate (raw) {
+  var d = new Date(raw);
+  var mm = d.getMonth() + 1;
+  var dd = d.getDate();
+  var hh = ('0' + d.getHours()).slice(-2);
+  var mi = ('0' + d.getMinutes()).slice(-2);
+  return {'mm': mm, 'dd': dd, 'hh': hh, 'mi': mi}
+}
+
 export default {
   name: 'Top-info',
   props: ['title', 'text', 'time'],
   components: {
+  },
+  computed: {
+    formated: function () {
+      return formatDate(this.time)
+    }
   },
   data: () => ({
     popupEnable: false,
