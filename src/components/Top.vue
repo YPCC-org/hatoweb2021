@@ -55,7 +55,9 @@
         <!-- お知らせ -->
         <v-container>
             <v-card
+            max-height="400"
             elevation="3"
+            style="overflow: scroll"
             outlined>
                 <v-card-title>
                     お知らせ
