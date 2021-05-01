@@ -36,6 +36,8 @@
                     style="text-align: center"
                     :to="link_button.link">
                         <v-card-text>
+                            <v-icon>{{ link_button.icon }}</v-icon>
+                            <v-spacer></v-spacer>
                             {{ link_button.text }}
                         </v-card-text>
                     </v-card>
@@ -55,7 +57,7 @@
         <!-- お知らせ -->
         <v-container>
             <v-card
-            max-height="400"
+            max-height="300"
             elevation="3"
             style="overflow: scroll"
             outlined>
@@ -113,7 +115,7 @@ export default {
     ],
 
     link_buttons: [
-        { text: "クラス展", link: "/class"},
+        { text: "クラス展", link: "/class", icon: "mdi-account-group"},
         /* { text: "スケジュール", link: ""}, */
         /* { text: "お知らせ", link: ""}, */
         /* { text: "販売", link: ""}, */
