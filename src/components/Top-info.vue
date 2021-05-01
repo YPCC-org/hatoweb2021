@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <v-list-item @click="popupEnable = true">
+        <v-list-item :input-value="popupEnable" @click="popupEnable = true">
             {{ title }}
             <v-spacer></v-spacer>
             {{ formatedTime.mm }}/{{ formatedTime.dd }}
