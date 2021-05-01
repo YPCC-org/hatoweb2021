@@ -5,6 +5,7 @@
             {{ title }}
             <v-spacer></v-spacer>
             {{ formatedTime.mm }}/{{ formatedTime.dd }}
+            {{ formatedTime.hh }}:{{ formatedTime.mi }}
         </v-list-item>
 
         <v-dialog v-model="popupEnable">
