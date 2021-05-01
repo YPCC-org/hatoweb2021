@@ -64,10 +64,13 @@
                 </v-card-title>
                 <v-card-text>
                     <v-list dense>
-                        <v-list-item-group v-for="(info, index) in infoTexts" v-bind:key="index">
-                            <v-list-item>
-                                {{ info.title }}
-                            </v-list-item>
+                        <v-list-item-group>
+                            <InfoCard
+                            v-for="(info, index) in reversedInfoTexts"
+                            v-bind:key="index"
+                            :title="info.title"
+                            :text="info.value"
+                            :time="info.updated_at"></InfoCard>
                         </v-list-item-group>
                     </v-list>
                 </v-card-text>
@@ -78,7 +81,8 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
+import InfoCard from "@/components/Top-info.vue";
 
 export default {
   name: 'Top',
@@ -88,6 +92,12 @@ export default {
       .then(response => (this.infoTexts = response.data));
   },
   components: {
+    InfoCard,
+  },
+  computed: {
+    reversedInfoTexts: function () {
+      return this.infoTexts
+    }
   },
   data: () => ({
     infoTexts: {},
