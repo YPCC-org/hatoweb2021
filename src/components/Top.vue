@@ -61,9 +61,10 @@
             outlined>
                 <v-card-title>
                     お知らせ
-                    <v-spacer></v-spacer>
-                    <v-icon>mdi-information</v-icon>
                 </v-card-title>
+                <v-card-subtitle style="text-align: right">
+                    最終更新：{{ infoLastUpdate }}
+                </v-card-subtitle>
                 <v-card-text>
                     <v-list dense>
                         <v-list-item-group>
@@ -92,6 +93,7 @@ export default {
     axios
       .get('https://hatoweb-api.herokuapp.com/notif')
       .then(response => (this.infoTexts = response.data));
+    this.infoLastUpdate = new Date().getHours() + ':' + new Date().getMinutes()
   },
   components: {
     InfoCard,
@@ -103,6 +105,7 @@ export default {
   },
   data: () => ({
     infoTexts: {},
+    infoLastUpdate: null,
     carousel_height: 200,
     carousel_images: [
         { src: require("@/assets/carousel/top.png")},
