@@ -2,9 +2,17 @@
         <tr @click="popupEnable = true">
 
             <td>
+                <v-chip
+                    outlined
+                    x-small
+                    color="red"
+                    v-if="formatedTime.isNew"
+                    >
+                        NEW
+                </v-chip>
                 {{ title }}
             </td>
-            <td>
+            <td style="text-align: right">
                 {{ formatedTime.mm }}/{{ formatedTime.dd }}
                 {{ formatedTime.hh }}:{{ formatedTime.mi }}
             </td>
@@ -42,7 +50,13 @@ export default {
       var dd = d.getDate();
       var hh = ('0' + d.getHours()).slice(-2);
       var mi = ('0' + d.getMinutes()).slice(-2);
-      return {'mm': mm, 'dd': dd, 'hh': hh, 'mi': mi}
+      var now = new Date();
+      var diff = Math.abs((now.getTime() - d.getTime()));
+      var isNew = false;
+      if (diff <= 3600000) {
+        isNew = true;
+      }
+      return {'mm': mm, 'dd': dd, 'hh': hh, 'mi': mi, 'isNew': isNew}
     }
   },
   data: () => ({
