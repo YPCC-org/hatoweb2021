@@ -12,7 +12,7 @@
                 </v-chip>
                 {{ title }}
             </td>
-            <td style="text-align: right">
+            <td style="text-align: center">
                 {{ formatedTime.mm }}/{{ formatedTime.dd }}
                 {{ formatedTime.hh }}:{{ formatedTime.mi }}
             </td>
