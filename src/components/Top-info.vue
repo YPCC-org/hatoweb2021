@@ -46,16 +46,16 @@ export default {
   computed: {
     formatedTime: function () {
       var d = new Date(this.time);
-      var mm = d.getMonth() + 1;
-      var dd = d.getDate();
-      var hh = ('0' + d.getHours()).slice(-2);
-      var mi = ('0' + d.getMinutes()).slice(-2);
       var now = new Date();
       var diff = Math.abs((now.getTime() - d.getTime()));
       var isNew = false;
       if (diff <= 3600000) {
         isNew = true;
       }
+      var mm = d.getMonth() + 1;
+      var dd = d.getDate();
+      var hh = ('0' + d.getHours()).slice(-2);
+      var mi = ('0' + d.getMinutes()).slice(-2);
       return {'mm': mm, 'dd': dd, 'hh': hh, 'mi': mi, 'isNew': isNew}
     }
   },
