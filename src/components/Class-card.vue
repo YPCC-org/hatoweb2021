@@ -46,7 +46,13 @@
                     {{ title }}
                 </v-card-title>
                 <v-card-text v-if="api">
-                    {{ api.comment }}
+                    <div style="display: inline-block">
+                        {{ api.comment }}
+                    </div>
+                    <div style="display: inline-block;float: right">
+                        <v-icon>mdi-update</v-icon>
+                        {{ updateTime }}
+                    </div>
                 </v-card-text>
                 <v-card-text style="white-space: pre-wrap">
                     {{ text }}
@@ -67,6 +73,14 @@ export default {
   // api        : APIの返り値
   props: ['title', 'src', 'text', 'isOpen', 'api'],
   components: {
+  },
+  computed: {
+    updateTime: function () {
+      var d = new Date(this.api.updated_at)
+      var hh = ('0' + d.getHours()).slice(-2);
+      var mi = ('0' + d.getMinutes()).slice(-2);
+      return hh + ':' + mi
+    }
   },
   data: () => ({
     popupEnable: false,
