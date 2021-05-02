@@ -1,31 +1,32 @@
 <template>
-    <div>
+        <tr @click="popupEnable = true">
 
-        <v-list-item :input-value="popupEnable" @click="popupEnable = true">
-            {{ title }}
-            <v-spacer></v-spacer>
-            {{ formatedTime.mm }}/{{ formatedTime.dd }}
-            {{ formatedTime.hh }}:{{ formatedTime.mi }}
-        </v-list-item>
+            <td>
+                {{ title }}
+            </td>
+            <td>
+                {{ formatedTime.mm }}/{{ formatedTime.dd }}
+                {{ formatedTime.hh }}:{{ formatedTime.mi }}
+            </td>
 
-        <v-dialog v-model="popupEnable">
-            <v-card style="height: 800">
-                <v-card-title>
-                    {{ title }}
-                    <v-spacer></v-spacer>
-                    <v-icon>mdi-information</v-icon>
-                </v-card-title>
-                <v-card-subtitle>
-                    {{ formatedTime.mm }}/{{ formatedTime.dd }}
-                    {{ formatedTime.hh }}:{{ formatedTime.mi }}
-                </v-card-subtitle>
-                <v-card-text style="white-space: pre-wrap">
-                    {{ text }}
-                </v-card-text>
-            </v-card>
-        </v-dialog>
+            <v-dialog v-model="popupEnable">
+                <v-card style="height: 800">
+                    <v-card-title>
+                        {{ title }}
+                        <v-spacer></v-spacer>
+                        <v-icon>mdi-information</v-icon>
+                    </v-card-title>
+                    <v-card-subtitle>
+                        {{ formatedTime.mm }}/{{ formatedTime.dd }}
+                        {{ formatedTime.hh }}:{{ formatedTime.mi }}
+                    </v-card-subtitle>
+                    <v-card-text style="white-space: pre-wrap">
+                        {{ text }}
+                    </v-card-text>
+                </v-card>
+            </v-dialog>
 
-    </div>
+        </tr>
 </template>
 
 <script>

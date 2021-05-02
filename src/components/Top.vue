@@ -51,6 +51,11 @@
             elevation="3"
             outlined>
                 <v-card-title>ご挨拶</v-card-title>
+                <v-card-text>
+                    あいさつの文章を<br>
+                    入力<br>
+                    することができます<br>
+                </v-card-text>
             </v-card>
         </v-container>
 
@@ -68,16 +73,18 @@
                     最終更新：{{ infoLastUpdate }}
                 </v-card-subtitle>
                 <v-card-text>
-                    <v-list dense>
-                        <v-list-item-group>
-                            <InfoCard
-                            v-for="(info, index) in reversedInfoTexts"
-                            v-bind:key="index"
-                            :title="info.title"
-                            :text="info.value"
-                            :time="info.updated_at"></InfoCard>
-                        </v-list-item-group>
-                    </v-list>
+                    <v-simple-table>
+                        <template v:slot:default>
+                            <tbody>
+                                <InfoCard
+                                v-for="(info, index) in reversedInfoTexts"
+                                v-bind:key="index"
+                                :title="info.title"
+                                :text="info.value"
+                                :time="info.updated_at"></InfoCard>
+                            </tbody>
+                        </template>
+                    </v-simple-table>
                 </v-card-text>
             </v-card>
         </v-container>
