@@ -3,6 +3,7 @@
 
         <v-list-item :input-value="popupEnable" @click="popupEnable = true">
             <v-chip
+            class="mr-2"
                 outlined
                 x-small
                 color="red"
