@@ -122,7 +122,6 @@ export default {
             for (const grade of this.cards){
                 allCards = allCards.concat(grade.classes);
             }
-            console.log("unko")
             return allCards.filter(c => this.$cookies.isKey(c.key))
         },
     },
