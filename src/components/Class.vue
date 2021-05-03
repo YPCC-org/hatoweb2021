@@ -8,14 +8,22 @@
         v-model="selected_tab"
         next-icon="mdi-arrow-right-bold-circle"
         prev-icon="mdi-arrow-left-bold-circle">
-            <v-tab v-for="card in cards" :key="card.id">
+            <v-tab
+            v-for="card in cards"
+            :key="card.id"
+            :href="`#tab-${card.id}`"
+            >
                 {{ card.grade }}
             </v-tab>
         </v-tabs>
 
         <!-- タブの内容 -->
         <v-tabs-items v-model="selected_tab">
-            <v-tab-item v-for="card in cards" :key="card.id">
+            <v-tab-item
+            v-for="card in cards"
+            :key="card.id"
+            :value="`tab-${card.id}`"
+            >
                 <v-container>
                     <v-checkbox
                     v-model="is_show_closed"
@@ -53,6 +61,30 @@ export default {
     name: 'Class',
     components: {
       classCard
+    },
+    computed: {
+        selected_tab: {
+            set: function (tab) {
+                this.$router.replace({ query: { tab: tab.slice(-1) } });
+            },
+            get: function () {
+                var tab = this.$route.query.tab;
+                var ctab = 'tab-1';
+                if (tab == '1') {
+                    ctab = 'tab-1';
+                } else if (tab == '2') {
+                    ctab = 'tab-2';
+                } else if (tab == '3') {
+                    ctab = 'tab-3';
+                } else if (tab == '4') {
+                    ctab = 'tab-4';
+                    } else {
+                    this.$router.replace({ query: { tab: '1' } });
+                    ctab = 'tab-1';
+                }
+                return ctab
+            }
+        }
     },
     methods: {
         // 値をセット
@@ -215,7 +247,6 @@ export default {
               ]
           },
       ],
-      selected_tab: "tab-1",
       is_show_closed: false,
     }),
 };
