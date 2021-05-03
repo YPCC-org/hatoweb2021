@@ -87,24 +87,34 @@ export default {
             .get('https://hatoweb-api.herokuapp.com/class_ten')
             .then(response => this.setClasstenApi(response));
         this.apiIntervalId = setInterval(this.getClasstenApi, 600000);
-        var tab = this.$route.query.tab;
-        var ctab = 'tab-1';
-        if (tab == '1') {
-            ctab = 'tab-1';
-        } else if (tab == '2') {
-            ctab = 'tab-2';
-        } else if (tab == '3') {
-            ctab = 'tab-3';
-        } else if (tab == '4') {
-            ctab = 'tab-4';
-        } else {
-            ctab = 'tab-1';
-        }
-        this.selected_tab = ctab;
     },
     beforeDestroy () {
       console.log('clearInterval');
       clearInterval(this.apiIntervalId);
+    },
+    computed: {
+        selected_tab: {
+            set: function (tab) {
+                this.$router.replace({ query: { tab: tab.slice(-1) } });
+            },
+            get: function () {
+                var tab = this.$route.query.tab;
+                var ctab = 'tab-1';
+                if (tab == '1') {
+                    ctab = 'tab-1';
+                } else if (tab == '2') {
+                    ctab = 'tab-2';
+                } else if (tab == '3') {
+                    ctab = 'tab-3';
+                } else if (tab == '4') {
+                    ctab = 'tab-4';
+                } else {
+                    this.$router.replace({ query: { tab: '1' } });
+                    ctab = 'tab-1';
+                }
+                return ctab
+            }
+        }
     },
     data: () => ({
       apiIntervalId: undefined,
@@ -237,7 +247,7 @@ export default {
               ]
           },
       ],
-      selected_tab: "",
+      // selected_tab: "",
       is_show_closed: false,
     }),
 };
