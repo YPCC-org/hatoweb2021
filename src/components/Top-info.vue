@@ -1,6 +1,5 @@
 <template>
-        <tr @click="popupEnable = true">
-
+    <tr @click="popupEnable = true">
             <td>
                 <v-chip
                     outlined
@@ -12,11 +11,10 @@
                 </v-chip>
                 {{ title }}
             </td>
-            <td style="text-align: center">
+            <td style="text-align: right">
                 {{ formatedTime.mm }}/{{ formatedTime.dd }}
                 {{ formatedTime.hh }}:{{ formatedTime.mi }}
             </td>
-
             <v-dialog v-model="popupEnable">
                 <v-card style="height: 800">
                     <v-card-title>
@@ -33,7 +31,6 @@
                     </v-card-text>
                 </v-card>
             </v-dialog>
-
         </tr>
 </template>
 
