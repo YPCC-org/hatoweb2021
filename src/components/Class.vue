@@ -5,24 +5,26 @@
         <v-tabs
         fixed-tabs
         show-arrows
+        center-active
         v-model="selected_tab"
-        next-icon="mdi-arrow-right-bold-circle"
-        prev-icon="mdi-arrow-left-bold-circle">
+        >
             <v-tab
             v-for="card in cards"
             :key="card.id"
-            :href="`#tab-${card.id}`"
             >
                 {{ card.grade }}
+            </v-tab>
+            <v-tab>
+                <v-icon>mdi-star</v-icon>
             </v-tab>
         </v-tabs>
 
         <!-- タブの内容 -->
         <v-tabs-items v-model="selected_tab">
+            <!-- 通常のクラス展 -->
             <v-tab-item
             v-for="card in cards"
             :key="card.id"
-            :value="`tab-${card.id}`"
             >
                 <v-container>
                     <v-checkbox
@@ -39,6 +41,35 @@
                         >
                             <classCard
                             v-if="class_card.isOpen || !is_show_closed"
+                            :classkey="class_card.key"
+                            :title="class_card.title"
+                            :src="class_card.src"
+                            :text="class_card.text"
+                            :api="class_ten_api[class_card.key]"
+                            :isOpen="class_card.isOpen"></classCard>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-tab-item>
+
+            <!-- お気に入り -->
+            <v-tab-item>
+                <v-container>
+                    <v-checkbox
+                    v-model="is_show_closed"
+                    hide-details
+                    label="開店中のみ"></v-checkbox>
+                </v-container>
+                <v-container>
+                    <v-row>
+                        <v-col
+                        cols="6"
+                        v-for="class_card in allClasses().filter(c => (c.isOpen == true) || (!is_show_closed))"
+                        :key="class_card.key"
+                        >
+                            <classCard
+                            v-if="class_card.isOpen || !is_show_closed"
+                            :classkey="class_card.key"
                             :title="class_card.title"
                             :src="class_card.src"
                             :text="class_card.text"
@@ -60,50 +91,39 @@ import axios from "axios"
 export default {
     name: 'Class',
     components: {
-      classCard
+      classCard,
     },
-    computed: {
-        selected_tab: {
-            set: function (tab) {
-                this.$router.replace({ query: { tab: tab.slice(-1) } });
-            },
-            get: function () {
-                var tab = this.$route.query.tab;
-                var ctab = 'tab-1';
-                if (tab == '1') {
-                    ctab = 'tab-1';
-                } else if (tab == '2') {
-                    ctab = 'tab-2';
-                } else if (tab == '3') {
-                    ctab = 'tab-3';
-                } else if (tab == '4') {
-                    ctab = 'tab-4';
-                    } else {
-                    this.$router.replace({ query: { tab: '1' } });
-                    ctab = 'tab-1';
-                }
-                return ctab
-            }
-        }
-    },
+
+    // APIを定期取得
     methods: {
-        // 値をセット
+        // APIの返り値を代入
         setClasstenApi: function (response) {
             // 元の値が空(=エラー)の時
             if (this.class_ten_api == ""){
-                this.class_ten_api = response.data
+                this.class_ten_api = response.data;
             // 変更があった時
             } else if (response.data !== this.class_ten_api) {
-                this.class_ten_api = response.data
+                this.class_ten_api = response.data;
             }
         },
-        // APIから値を取得
+        // APIから値を取得する関数
         getClasstenApi: function () {
             if (document.hasFocus()) {
                 axios
                     .get('https://hatoweb-api.herokuapp.com/class_ten')
                     .then(response => this.setClasstenApi(response));
             }
+        },
+        // 学年関係なくお気に入りされた全てのカードを返す
+        // 本来computedでやるべきだが、cookiesの更新がcomputedに
+        // ひっかからないので妥協
+        allClasses: function() {
+            var allCards = []
+            for (const grade of this.cards){
+                allCards = allCards.concat(grade.classes);
+            }
+            console.log("unko")
+            return allCards.filter(c => this.$cookies.isKey(c.key))
         },
     },
     mounted () {
@@ -116,9 +136,16 @@ export default {
       console.log('clearInterval');
       clearInterval(this.apiIntervalId);
     },
+
     data: () => ({
+      // APIの定期取得用タイマーID
       apiIntervalId: undefined,
+      // APIの返り値
       class_ten_api: "",
+      // 開店中のみオプション
+      is_show_closed: false,
+      // 選択されているタブ
+      selected_tab: 'tab-1',
       cards: [
           {
             // TODO 開店中かの判定を作成する
@@ -247,7 +274,8 @@ export default {
               ]
           },
       ],
-      is_show_closed: false,
     }),
+    computed: {
+    },
 };
 </script>
