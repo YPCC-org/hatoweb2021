@@ -4,7 +4,7 @@
         <v-card
         outlined
         elevation="3"
-        @click="popupEnable = true">
+        @click="popupEnable = true;checkIsFav()">
             <v-img contain height="100%" :src="src"></v-img>
             <v-card-subtitle>
                 {{ title }}
@@ -109,11 +109,16 @@ export default {
     }
   },
   mounted () {
-    if (this.$cookies.isKey(this.classkey)) {
-        this.isFav = 1;
-    }
+    this.checkIsFav()
   },
   methods: {
+    checkIsFav: function() {
+        if (this.$cookies.isKey(this.classkey)) {
+            this.isFav = 1;
+        } else {
+            this.isFav = 0;
+        }
+    },
     favorite: function() {
         if (this.isFav == 0){
             this.$cookies.set(this.classkey, true);
