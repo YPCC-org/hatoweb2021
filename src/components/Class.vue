@@ -118,7 +118,7 @@ export default {
         // 本来computedでやるべきだが、cookiesの更新がcomputedに
         // ひっかからないので妥協
         allClasses: function() {
-            var allCards = []
+            let allCards = []
             for (const grade of this.cards){
                 allCards = allCards.concat(grade.classes);
             }

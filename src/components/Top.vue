@@ -102,7 +102,7 @@ export default {
     axios
       .get('https://hatoweb-api.herokuapp.com/info')
       .then(response => (this.infoTexts = response.data));
-    var d = new Date
+    let d = new Date
     this.infoLastUpdate = ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
   },
   components: {

@@ -102,9 +102,9 @@ export default {
   },
   computed: {
     updateTime: function () {
-      var d = new Date(this.api.updated_at)
-      var hh = ('0' + d.getHours()).slice(-2);
-      var mi = ('0' + d.getMinutes()).slice(-2);
+      let d = new Date(this.api.updated_at)
+      let hh = ('0' + d.getHours()).slice(-2);
+      let mi = ('0' + d.getMinutes()).slice(-2);
       return hh + ':' + mi
     }
   },
@@ -112,6 +112,7 @@ export default {
     this.checkIsFav()
   },
   methods: {
+    // Tabが読み込まれたとき発火
     checkIsFav: function() {
         if (this.$cookies.isKey(this.classkey)) {
             this.isFav = 1;

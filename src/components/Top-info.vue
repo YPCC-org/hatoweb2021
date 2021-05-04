@@ -42,17 +42,17 @@ export default {
   },
   computed: {
     formatedTime: function () {
-      var d = new Date(this.time);
-      var now = new Date();
-      var diff = Math.abs((now.getTime() - d.getTime()));
-      var isNew = false;
+      let d = new Date(this.time);
+      let now = new Date();
+      let diff = Math.abs((now.getTime() - d.getTime()));
+      let isNew = false;
+      let mm = d.getMonth() + 1;
+      let dd = d.getDate();
+      let hh = ('0' + d.getHours()).slice(-2);
+      let mi = ('0' + d.getMinutes()).slice(-2);
       if (diff <= 3600000) {
         isNew = true;
       }
-      var mm = d.getMonth() + 1;
-      var dd = d.getDate();
-      var hh = ('0' + d.getHours()).slice(-2);
-      var mi = ('0' + d.getMinutes()).slice(-2);
       return {'mm': mm, 'dd': dd, 'hh': hh, 'mi': mi, 'isNew': isNew}
     }
   },
