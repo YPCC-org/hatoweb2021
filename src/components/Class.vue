@@ -11,10 +11,13 @@
             <v-tab
             v-for="card in cards"
             :key="card.id"
+            :href="`#tab-${card.id}`"
             >
                 {{ card.grade }}
             </v-tab>
-            <v-tab>
+            <v-tab
+            href="#tab-5"
+            >
                 <v-icon>mdi-star</v-icon>
             </v-tab>
         </v-tabs>
@@ -25,6 +28,7 @@
             <v-tab-item
             v-for="card in cards"
             :key="card.id"
+            :value="`tab-${card.id}`"
             >
                 <v-container>
                     <v-checkbox
@@ -53,7 +57,9 @@
             </v-tab-item>
 
             <!-- お気に入り -->
-            <v-tab-item>
+            <v-tab-item
+            value="tab-5"
+            >
                 <v-container>
                     <v-checkbox
                     v-model="is_show_closed"
@@ -143,8 +149,6 @@ export default {
       class_ten_api: "",
       // 開店中のみオプション
       is_show_closed: false,
-      // 選択されているタブ
-      selected_tab: 'tab-1',
       cards: [
           {
             // TODO 開店中かの判定を作成する
@@ -273,8 +277,25 @@ export default {
               ]
           },
       ],
+      tabnum: 5,
     }),
     computed: {
+        selected_tab: {
+            set: function (tab) {
+                this.$router.replace({ query: { tab: tab.slice(-1) } });
+            },
+            get: function () {
+                var tab = this.$route.query.tab;
+                var ctab;
+                if (tab > 0 && tab <= this.tabnum) {
+                    ctab = 'tab-' + tab;
+                } else {
+                    this.$router.replace({ query: { tab: '1' } });
+                    ctab = 'tab-1';
+                }
+                return ctab
+            }
+        },
     },
 };
 </script>
