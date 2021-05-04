@@ -1,14 +1,18 @@
 <template>
     <div>
 
+        <!-- カード一覧 -->
         <v-card
         outlined
         elevation="3"
         @click="popupEnable = true;checkIsFav()">
+            <!-- 画像 -->
             <v-img contain height="100%" :src="src"></v-img>
+            <!-- クラス展の名前 -->
             <v-card-subtitle>
                 {{ title }}
             </v-card-subtitle>
+            <!-- ステータス -->
             <v-card-text>
                 <v-chip
                 color="green"
@@ -39,13 +43,23 @@
             </v-card-text>
         </v-card>
 
+        <!-- 詳細表示 -->
         <v-dialog v-model="popupEnable">
-            <v-card style="height: 800">
+            <v-card style="height: 80%">
+            <div style="position: relative">
+                <!-- 画像 -->
                 <v-img contain height="100%" :src="src"></v-img>
+                <!-- 閉じるボタン -->
+                <v-card-actions style="float: right; position: absolute; right: 5px; top: 5px">
+                    <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                </v-card-actions>
+            </div>
+                <!-- クラス展の名前 -->
                 <v-card-title>
                     <div style="display: inline-block">
                         {{ title }}
                     </div>
+                    <!-- お気に入りボタン -->
                     <div style="display: inline-block;float: right">
                         <v-btn
                         icon
@@ -56,6 +70,7 @@
                         </v-btn>
                     </div>
                 </v-card-title>
+                <!-- 一言コメント -->
                 <v-card-text v-if="api">
                     <div style="display: inline-block">
                         {{ api.comment }}
@@ -65,6 +80,36 @@
                         {{ updateTime }}
                     </div>
                 </v-card-text>
+                <!-- ステータス -->
+                <v-card-text>
+                    <v-chip
+                    color="green"
+                    class="mr-2"
+                    outlined
+                    x-small
+                    v-if="isOpen"
+                    >
+                        Open
+                    </v-chip>
+                    <v-chip
+                    color="red"
+                    class="mr-2"
+                    outlined
+                    x-small
+                    v-if="!isOpen"
+                    >
+                        Closed
+                    </v-chip>
+                    <v-chip
+                    class="mr-2"
+                    outlined
+                    x-small
+                    color="blue"
+                    v-if="api">
+                        混雑:{{ api.status }}
+                    </v-chip>
+                </v-card-text>
+                <!-- 説明 -->
                 <v-card-text style="white-space: pre-wrap">
                     {{ text }}
                 </v-card-text>
@@ -77,11 +122,11 @@
             「{{ title }}」をお気に入りに追加しました
             <template v-slot:action="{ attrs }">
                 <v-btn
-                color="pink"
+                color="blue"
                 text
                 v-bind="attrs"
                 @click="isOpenFavSnackBar = false">
-                    Close
+                    OK
                 </v-btn>
             </template>
         </v-snackbar>
@@ -120,6 +165,7 @@ export default {
             this.isFav = 0;
         }
     },
+    // お気に入りに登録
     favorite: function() {
         if (this.isFav == 0){
             this.$cookies.set(this.classkey, true);
