@@ -20,7 +20,7 @@
                     <v-card-title>
                         {{ title }}
                         <v-spacer></v-spacer>
-                        <v-icon>mdi-information</v-icon>
+                        <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
                     </v-card-title>
                     <v-card-subtitle>
                         {{ formatedTime.mm }}/{{ formatedTime.dd }}
