@@ -26,9 +26,6 @@
                 <v-container>
                     <v-calendar
                     ref="calendar"
-                    v-model="day.vnow"
-                    :now="day.vnow"
-                    :value="day.vnow"
                     first-time="08:00"
                     interval-count=24
                     interval-minutes=30
@@ -90,13 +87,12 @@ export default {
             {
                 id: 1,
                 title: "7/5(金)",
-                vnow: "2019-07-05",
                 categories: ['メイン'],
                 events: [
                     {
                         name: "LHR & 準備",
-                        start: new Date('2019-07-05T08:40:00'),
-                        end: new Date('2019-07-05T11:00:00'),
+                        start: new Date(new Date().setHours(8, 40, 0, 0)),
+                        end: new Date(new Date().setHours(11, 0, 0, 0)),
                         category: 'メイン',
                         color: 'blue',
                         timed: true,
