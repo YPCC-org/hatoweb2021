@@ -23,7 +23,20 @@
             :key="day.id"
             :value="`tab-${day.id}`"
             >
-                {{day.title}}
+                <v-container>
+                    <v-calendar
+                    ref="calendar"
+                    v-model="day.vnow"
+                    :now="day.vnow"
+                    :value="day.vnow"
+                    color="primary"
+                    type="category"
+                    category-show-all
+                    :categories="day.categories"
+                    :events="day.events"
+                    :event-color="getEventColor"
+                    ></v-calendar>
+                </v-container>
             </v-tab-item>
         </v-tabs-items>
     </div>
@@ -35,6 +48,11 @@ export default {
     mounted () {
     },
     components: {
+    },
+    method: {
+        getEventColor (event) {
+            return event.color
+        },
     },
     computed: {
             selected_tab: {
@@ -60,14 +78,28 @@ export default {
             {
                 id: 1,
                 title: "7/5(金)",
+                vnow: "2019-07-05",
+                categories: ['メイン'],
+                events: [
+                    {
+                        name: "LHR & 準備",
+                        start: new Date('2019-07-05T08:40:00'),
+                        end: new Date('2019-07-05T11:00:00'),
+                        category: 'メイン',
+                        color: 'blue',
+                        timed: true,
+                    },
+                ],
             },
             {
                 id: 2,
                 title: "7/6(土)",
+                vnow: "2019-07-06",
             },
             {
                 id: 3,
                 title: "7/7(日)",
+                vnow: "2019-07-07",
             },
         ],
     }),
