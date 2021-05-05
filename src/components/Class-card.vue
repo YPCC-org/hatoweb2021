@@ -134,7 +134,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Class-card',
   // titile     : クラス展の名前
@@ -151,7 +150,32 @@ export default {
       let hh = ('0' + d.getHours()).slice(-2);
       let mi = ('0' + d.getMinutes()).slice(-2);
       return hh + ':' + mi
-    }
+    },
+    popupEnable: {
+        get: function () {
+            if (this.$route.query.class == this.classkey) {
+                return true
+            } else {
+                return false
+            }
+        },
+        set: function (arg) {
+            if (arg) {
+                this.$router.replace({
+                    query: {
+                        tab: this.$route.query.tab,
+                        class: this.classkey,
+                    },
+                });
+            } else {
+                this.$router.replace({
+                    query: {
+                        tab: this.$route.query.tab,
+                    },
+                });
+            }
+        },
+    },
   },
   mounted () {
     this.checkIsFav()
@@ -178,7 +202,6 @@ export default {
     },
   },
   data: () => ({
-    popupEnable: false,
     favoriteColor: ["gray", "yellow"],
     isFav: 0,
     isOpenFavSnackBar: false,
