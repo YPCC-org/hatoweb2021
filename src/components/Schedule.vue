@@ -29,6 +29,9 @@
                     v-model="day.vnow"
                     :now="day.vnow"
                     :value="day.vnow"
+                    first-time="08:00"
+                    interval-count=24
+                    interval-minutes=30
                     color="primary"
                     type="category"
                     category-show-all
