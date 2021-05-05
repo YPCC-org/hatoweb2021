@@ -31,45 +31,45 @@
 
 <script>
 export default {
-  name: 'Schedule',
-  mounted () {
-  },
-  components: {
-  },
-  computed: {
-        selected_tab: {
-            set: function (tab) {
-                this.$router.replace({ query: { tab: tab.slice(-1) } });
-            },
-            get: function () {
-                var tab = this.$route.query.tab;
-                var ctab;
-                if (tab > 0 && tab <= this.tabnum) {
-                    ctab = 'tab-' + tab;
-                } else {
-                    this.$router.replace({ query: { tab: '1' } });
-                    ctab = 'tab-1';
+    name: 'Schedule',
+    mounted () {
+    },
+    components: {
+    },
+    computed: {
+            selected_tab: {
+                set: function (tab) {
+                    this.$router.replace({ query: { tab: tab.slice(-1) } });
+                },
+                get: function () {
+                    var tab = this.$route.query.tab;
+                    var ctab;
+                    if (tab > 0 && tab <= this.tabnum) {
+                        ctab = 'tab-' + tab;
+                    } else {
+                        this.$router.replace({ query: { tab: '1' } });
+                        ctab = 'tab-1';
+                    }
+                    return ctab
                 }
-                return ctab
-            }
-        },
-  },
-  data: () => ({
-    tabnum: 3,
-    days: [
-        {
-            id: 1,
-            title: "7/5(金)",
-        },
-        {
-            id: 2,
-            title: "7/6(土)",
-        },
-        {
-            id: 3,
-            title: "7/7(日)",
-        },
-    ],
-  }),
+            },
+    },
+    data: () => ({
+        tabnum: 3,
+        days: [
+            {
+                id: 1,
+                title: "7/5(金)",
+            },
+            {
+                id: 2,
+                title: "7/6(土)",
+            },
+            {
+                id: 3,
+                title: "7/7(日)",
+            },
+        ],
+    }),
 };
 </script>
