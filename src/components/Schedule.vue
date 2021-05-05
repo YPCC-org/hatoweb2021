@@ -45,6 +45,15 @@
     </div>
 </template>
 
+<style>
+    .v-calendar-daily_head-weekday {
+        display: none;
+    }
+    .v-calendar-daily_head-day-label {
+        display: none;
+    }
+</style>
+
 <script>
 export default {
     name: 'Schedule',
