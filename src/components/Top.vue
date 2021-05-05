@@ -124,7 +124,7 @@ export default {
 
     link_buttons: [
         { text: "クラス展", link: "/class", icon: "mdi-account-group"},
-        /* { text: "スケジュール", link: ""}, */
+        { text: "スケジュール", link: "/schedule", icon: "mdi-clock"},
         /* { text: "お知らせ", link: ""}, */
         /* { text: "販売", link: ""}, */
     ],
