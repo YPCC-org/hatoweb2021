@@ -4,10 +4,22 @@
         <!-- カード一覧 -->
         <v-card
         outlined
-        elevation="3"
-        @click="popupEnable = true;checkIsFav()">
-            <!-- 画像 -->
-            <v-img contain height="100%" :src="src"></v-img>
+        elevation="3">
+            <div style="position: relative">
+                <!-- 画像 -->
+                <v-img contain height="100%" :src="src" @click="popupEnable = true"></v-img>
+                <!-- 閉じるボタン -->
+                <v-card-actions style="float: right; position: absolute; right: 0px; top: 0px">
+                    <v-btn
+                    icon
+                    :color="favoriteColor[isFav]"
+                    @click="favorite()"
+                    >
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                </v-card-actions>
+            </div>
+            <div @click="popupEnable = true;checkIsFav()">
             <!-- クラス展の名前 -->
             <v-card-subtitle>
                 {{ title }}
@@ -41,6 +53,7 @@
                     混雑:{{ api.status }}
                 </v-chip>
             </v-card-text>
+            </div>
         </v-card>
 
         <!-- 詳細表示 -->
@@ -66,7 +79,7 @@
                         :color="favoriteColor[isFav]"
                         @click="favorite()"
                         >
-                            <v-icon>mdi-star</v-icon>
+                            <v-icon>mdi-heart</v-icon>
                         </v-btn>
                     </div>
                 </v-card-title>
@@ -119,7 +132,7 @@
         <v-snackbar
         v-model="isOpenFavSnackBar"
         >
-            「{{ title }}」をお気に入りに追加しました
+            「{{ title }}」をお気に入り(❤︎)に追加しました!
             <template v-slot:action="{ attrs }">
                 <v-btn
                 color="blue"
@@ -180,9 +193,13 @@ export default {
   mounted () {
     this.checkIsFav()
   },
+  updated () {
+    this.checkIsFav()
+  },
   methods: {
     // Tabが読み込まれたとき発火
     checkIsFav: function() {
+    console.log("updated")
         if (this.$cookies.isKey(this.classkey)) {
             this.isFav = 1;
         } else {
@@ -202,7 +219,7 @@ export default {
     },
   },
   data: () => ({
-    favoriteColor: ["gray", "yellow"],
+    favoriteColor: ["gray", "pink"],
     isFav: 0,
     isOpenFavSnackBar: false,
   }),

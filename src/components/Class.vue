@@ -18,7 +18,7 @@
             <v-tab
             href="#tab-5"
             >
-                <v-icon>mdi-star</v-icon>
+                <v-icon>mdi-heart</v-icon>
             </v-tab>
         </v-tabs>
 
@@ -60,30 +60,44 @@
             <v-tab-item
             value="tab-5"
             >
-                <v-container>
-                    <v-checkbox
-                    v-model="is_show_closed"
-                    hide-details
-                    label="開店中のみ"></v-checkbox>
-                </v-container>
-                <v-container>
-                    <v-row>
-                        <v-col
-                        cols="6"
-                        v-for="class_card in allClasses().filter(c => (c.isOpen == true) || (!is_show_closed))"
-                        :key="class_card.key"
-                        >
-                            <classCard
-                            v-if="class_card.isOpen || !is_show_closed"
-                            :classkey="class_card.key"
-                            :title="class_card.title"
-                            :src="class_card.src"
-                            :text="class_card.text"
-                            :api="class_ten_api[class_card.key]"
-                            :isOpen="class_card.isOpen"></classCard>
-                        </v-col>
-                    </v-row>
-                </v-container>
+                <div v-if="!allClasses().length">
+                    <v-container>
+                        <div style="text-align: center">
+                            <v-card outlined>
+                                気になる展示をお気に入りに追加しましょう<br>
+                                <v-icon>mdi-heart</v-icon>
+                                <v-icon>mdi-arrow-right</v-icon>
+                                <v-icon color="pink">mdi-heart</v-icon>
+                            </v-card>
+                        </div>
+                    </v-container>
+                </div>
+                <div v-else>
+                    <v-container>
+                        <v-checkbox
+                        v-model="is_show_closed"
+                        hide-details
+                        label="開店中のみ"></v-checkbox>
+                    </v-container>
+                    <v-container>
+                        <v-row>
+                            <v-col
+                            cols="6"
+                            v-for="class_card in allClasses().filter(c => (c.isOpen == true) || (!is_show_closed))"
+                            :key="class_card.key"
+                            >
+                                <classCard
+                                v-if="class_card.isOpen || !is_show_closed"
+                                :classkey="class_card.key"
+                                :title="class_card.title"
+                                :src="class_card.src"
+                                :text="class_card.text"
+                                :api="class_ten_api[class_card.key]"
+                                :isOpen="class_card.isOpen"></classCard>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </div>
             </v-tab-item>
         </v-tabs-items>
 
