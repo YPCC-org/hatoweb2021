@@ -38,7 +38,7 @@
                     <v-list-item>
                         <v-list-item-title>お知らせ</v-list-item-title>
                     </v-list-item>
-                    <v-list-item>
+                    <v-list-item link to="schedule">
                         <v-list-item-title>スケジュール</v-list-item-title>
                     </v-list-item>
                     <v-list-item>
