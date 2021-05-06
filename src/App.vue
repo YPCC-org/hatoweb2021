@@ -35,15 +35,15 @@
                     <v-list-item link to="class">
                         <v-list-item-title>クラス展</v-list-item-title>
                     </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title>お知らせ</v-list-item-title>
-                    </v-list-item>
                     <v-list-item link to="schedule">
                         <v-list-item-title>スケジュール</v-list-item-title>
+                    </v-list-item>
+                    <!--
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-title>販売</v-list-item-title>
                     </v-list-item>
+                    -->
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>
