@@ -35,8 +35,24 @@
                     :categories="day.categories"
                     :events="day.events"
                     :event-color="getEventColor"
+                    @click:event="eventPopup"
                     ></v-calendar>
                 </v-container>
+                <v-dialog
+                v-model="popupEnable"
+                v-if="popuping"
+                >
+                    <v-card style="height: 80%">
+                        <v-card-title>
+                            {{ popuping.name }}
+                            <v-spacer></v-spacer>
+                            <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                        </v-card-title>
+                        <v-card-text style="white-space: pre-wrap">
+                            {{ popuping.desc }}
+                        </v-card-text>
+                    </v-card>
+                </v-dialog>
             </v-tab-item>
         </v-tabs-items>
     </div>
@@ -58,9 +74,13 @@ export default {
     },
     components: {
     },
-    method: {
+    methods: {
         getEventColor (event) {
             return event.color
+        },
+        eventPopup (arg) {
+            this.popupEnable = true;
+            this.popuping = arg.event;
         },
     },
     computed: {
@@ -83,42 +103,52 @@ export default {
     },
     data: () => ({
         tabnum: 3,
+        popupEnable: false,
+        popuping: null,
         days: [
             {
                 id: 1,
                 title: "7/5(金)",
-                categories: ['メイン'],
+                categories: ["メイン"],
                 events: [
                     {
+                        id: 1,
                         name: "LHR & 準備",
+                        desc: "ロングホームルームと準備をします。\nまあそんな感じで説明が入ります。",
                         start: new Date(new Date().setHours(8, 40, 0, 0)),
                         end: new Date(new Date().setHours(11, 0, 0, 0)),
-                        category: 'メイン',
-                        color: 'indigo',
+                        category: "メイン",
+                        color: "indigo",
                         timed: true,
                     },
                     {
+                        id: 2,
                         name: "清掃 / 昼食",
+                        desc: "hello",
                         start: new Date(new Date().setHours(11, 0, 0, 0)),
                         end: new Date(new Date().setHours(12, 0, 0, 0)),
-                        category: 'メイン',
-                        color: 'blue',
+                        category: "メイン",
+                        color: "blue",
                         timed: true,
                     },
                     {
+                        id: 3,
                         name: "ハト1GP",
+                        desc: "hello",
                         start: new Date(new Date().setHours(12, 0, 0, 0)),
                         end: new Date(new Date().setHours(14, 45, 0, 0)),
-                        category: 'メイン',
-                        color: 'indigo',
+                        category: "メイン",
+                        color: "indigo",
                         timed: true,
                     },
                     {
+                        id: 4,
                         name: "開会式 / 前夜祭",
+                        desc: "hello",
                         start: new Date(new Date().setHours(14, 45, 0, 0)),
                         end: new Date(new Date().setHours(18, 30, 0, 0)),
-                        category: 'メイン',
-                        color: 'blue',
+                        category: "メイン",
+                        color: "blue",
                         timed: true,
                     },
                 ],
