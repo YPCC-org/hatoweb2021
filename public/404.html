@@ -1,0 +1,5 @@
+<script>
+const l = window.location;
+const url = l.protocol + '//' + l.host + '/?p=' + String(l).replace(l.protocol + '//' + l.host, '');
+l.replace(url);
+</script>
