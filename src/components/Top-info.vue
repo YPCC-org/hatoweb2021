@@ -18,9 +18,16 @@
             <v-dialog v-model="popupEnable">
                 <v-card style="height: 800">
                     <v-card-title>
-                        {{ title }}
-                        <v-spacer></v-spacer>
-                        <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                            <table style="width: 100%;" border=0>
+                                <tr>
+                                    <td>
+                                        {{ title }}
+                                    </td>
+                                    <td style="width: 1em;">
+                                        <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                                    </td>
+                                </tr>
+                            </table>
                     </v-card-title>
                     <v-card-subtitle>
                         {{ formatedTime.mm }}/{{ formatedTime.dd }}

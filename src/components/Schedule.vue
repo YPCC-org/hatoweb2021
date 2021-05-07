@@ -44,9 +44,16 @@
                 >
                     <v-card style="height: 80%">
                         <v-card-title>
-                            {{ popuping.name }}
-                            <v-spacer></v-spacer>
-                            <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                            <table style="width: 100%;" border=0>
+                                <tr>
+                                    <td>
+                                        {{ popuping.name }}
+                                    </td>
+                                    <td style="width: 1em;">
+                                        <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
+                                    </td>
+                                </tr>
+                            </table>
                         </v-card-title>
                         <v-card-text style="white-space: pre-wrap">
                             {{ popuping.desc }}
