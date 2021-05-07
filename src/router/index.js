@@ -11,17 +11,29 @@ const routes = [
     {
         path: '/',
         name: 'Top',
-        component: Top
+        component: Top,
+        meta: {
+            title: 'トップページ | 鳩Web！',
+            desc: ''
+        },
     },
     {
         path: '/class',
         name: 'Class',
-        component: Class
+        component: Class,
+        meta: {
+            title: 'クラス展 | 鳩Web！',
+            desc: ''
+        },
     },
     {
         path: '/schedule',
         name: 'Schedule',
-        component: Schedule
+        component: Schedule,
+        meta: {
+            title: 'スケジュール | 鳩Web！',
+            desc: ''
+        },
     },
 ]
 
