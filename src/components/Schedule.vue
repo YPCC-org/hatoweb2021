@@ -17,6 +17,7 @@
         </v-tabs>
 
         <!-- タブの内容 -->
+        <!--ヘッダー55pxタブ50pxを引いた高さ-->
         <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
             <v-tab-item
             v-for="day in days"
