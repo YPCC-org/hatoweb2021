@@ -17,7 +17,7 @@
         </v-tabs>
 
         <!-- タブの内容 -->
-        <v-tabs-items v-model="selected_tab">
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
             <v-tab-item
             v-for="day in days"
             :key="day.id"
