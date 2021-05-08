@@ -2,25 +2,31 @@
     <div>
 
         <!-- タブUI -->
-        <v-tabs
-        fixed-tabs
-        show-arrows
-        center-active
-        v-model="selected_tab"
-        >
-            <v-tab
-            v-for="card in cards"
-            :key="card.id"
-            :href="`#tab-${card.id}`"
+        <v-app-bar
+        fixed
+        flat
+        color="white"
+        style="top: 55px;">
+            <v-tabs
+            fixed-tabs
+            show-arrows
+            center-active
+            v-model="selected_tab"
             >
-                {{ card.grade }}
-            </v-tab>
-            <v-tab
-            href="#tab-5"
-            >
-                <v-icon>mdi-heart</v-icon>
-            </v-tab>
-        </v-tabs>
+                <v-tab
+                v-for="card in cards"
+                :key="card.id"
+                :href="`#tab-${card.id}`"
+                >
+                    {{ card.grade }}
+                </v-tab>
+                <v-tab
+                href="#tab-5"
+                >
+                    <v-icon>mdi-heart</v-icon>
+                </v-tab>
+            </v-tabs>
+        </v-app-bar>
 
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->

@@ -2,7 +2,9 @@
   <v-app>
     <v-main>
         <v-app-bar
-        color="white">
+        color="white"
+        fixed
+        >
             <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>
             <v-toolbar-title>
                 鳩祭
@@ -48,7 +50,7 @@
             </v-list>
         </v-navigation-drawer>
 
-        <router-view></router-view>
+        <router-view style="padding-top: 60px;"></router-view>
 
     </v-main>
   </v-app>
