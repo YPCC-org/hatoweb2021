@@ -50,7 +50,8 @@
             </v-list>
         </v-navigation-drawer>
 
-        <router-view style="padding-top: 60px;"></router-view>
+        <!--ヘッダー55px分下げる-->
+        <router-view style="padding-top: 55px;"></router-view>
 
     </v-main>
   </v-app>

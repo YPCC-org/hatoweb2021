@@ -1,6 +1,7 @@
 <template>
     <div>
         <!-- タブUI -->
+        <!--ヘッダー55px分下げる-->
         <v-app-bar
         fixed
         flat
@@ -24,7 +25,8 @@
 
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
+        <!--タブ50px分下げる-->
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
             <v-tab-item
             v-for="day in days"
             :key="day.id"
