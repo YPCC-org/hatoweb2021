@@ -23,7 +23,8 @@
         </v-tabs>
 
         <!-- タブの内容 -->
-        <v-tabs-items v-model="selected_tab">
+        <!--ヘッダー55pxタブ50pxを引いた高さ-->
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
             <!-- 通常のクラス展 -->
             <v-tab-item
             v-for="card in cards"
