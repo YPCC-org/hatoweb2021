@@ -6,13 +6,16 @@
         <v-app-bar
         fixed
         flat
+        height="60px"
         color="white"
         style="top: 55px;">
+            <!--高さを固定-->
             <v-tabs
             fixed-tabs
             show-arrows
             center-active
             v-model="selected_tab"
+            height="50px"
             >
                 <v-tab
                 v-for="card in cards"
@@ -29,22 +32,31 @@
             </v-tabs>
         </v-app-bar>
 
+        <!--チェックボックスを固定-->
+        <v-app-bar
+        fixed
+        flat
+        height="50px"
+        style="top: 105px;"
+        >
+            <v-container>
+                <v-checkbox
+                v-model="is_show_closed"
+                hide-details
+                label="開店中のみ"></v-checkbox>
+            </v-container>
+        </v-app-bar>
+
         <!-- タブの内容 -->
-        <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <!--タブ50px分下げる-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
+        <!--ヘッダー55pxタブ50pxチェックボックス50pxを引いた高さ-->
+        <!--タブ50pxチェックボックス50px分下げる-->
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 155px); margin-top: 100px;">
             <!-- 通常のクラス展 -->
             <v-tab-item
             v-for="card in cards"
             :key="card.id"
             :value="`tab-${card.id}`"
             >
-                <v-container>
-                    <v-checkbox
-                    v-model="is_show_closed"
-                    hide-details
-                    label="開店中のみ"></v-checkbox>
-                </v-container>
                 <v-container>
                     <v-row>
                         <v-col
