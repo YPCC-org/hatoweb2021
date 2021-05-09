@@ -2,29 +2,37 @@
     <div>
 
         <!-- タブUI -->
-        <v-tabs
-        fixed-tabs
-        show-arrows
-        center-active
-        v-model="selected_tab"
-        >
-            <v-tab
-            v-for="card in cards"
-            :key="card.id"
-            :href="`#tab-${card.id}`"
+        <!--ヘッダー55px分下げる-->
+        <v-app-bar
+        fixed
+        flat
+        color="white"
+        style="top: 55px;">
+            <v-tabs
+            fixed-tabs
+            show-arrows
+            center-active
+            v-model="selected_tab"
             >
-                {{ card.grade }}
-            </v-tab>
-            <v-tab
-            href="#tab-5"
-            >
-                <v-icon>mdi-heart</v-icon>
-            </v-tab>
-        </v-tabs>
+                <v-tab
+                v-for="card in cards"
+                :key="card.id"
+                :href="`#tab-${card.id}`"
+                >
+                    {{ card.grade }}
+                </v-tab>
+                <v-tab
+                href="#tab-5"
+                >
+                    <v-icon>mdi-heart</v-icon>
+                </v-tab>
+            </v-tabs>
+        </v-app-bar>
 
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
+        <!--タブ50px分下げる-->
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
             <!-- 通常のクラス展 -->
             <v-tab-item
             v-for="card in cards"

@@ -1,24 +1,32 @@
 <template>
     <div>
         <!-- タブUI -->
-        <v-tabs
-        fixed-tabs
-        show-arrows
-        center-active
-        v-model="selected_tab"
-        >
-            <v-tab
-            v-for="day in days"
-            :key="day.id"
-            :href="`#tab-${day.id}`"
+        <!--ヘッダー55px分下げる-->
+        <v-app-bar
+        fixed
+        flat
+        color="white"
+        style="top: 55px;">
+            <v-tabs
+            fixed-tabs
+            show-arrows
+            center-active
+            v-model="selected_tab"
             >
-                {{ day.title }}
-            </v-tab>
-        </v-tabs>
+                <v-tab
+                v-for="day in days"
+                :key="day.id"
+                :href="`#tab-${day.id}`"
+                >
+                    {{ day.title }}
+                </v-tab>
+            </v-tabs>
+        </v-app-bar>
 
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px);">
+        <!--タブ50px分下げる-->
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
             <v-tab-item
             v-for="day in days"
             :key="day.id"
