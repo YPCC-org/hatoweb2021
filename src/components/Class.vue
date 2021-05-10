@@ -40,12 +40,6 @@
             :value="`tab-${card.id}`"
             >
                 <v-container>
-                    <v-checkbox
-                    v-model="is_show_closed"
-                    hide-details
-                    label="開店中のみ"></v-checkbox>
-                </v-container>
-                <v-container>
                     <v-row>
                         <v-col
                         cols="6"
@@ -170,8 +164,6 @@ export default {
       apiIntervalId: undefined,
       // APIの返り値
       class_ten_api: "",
-      // 開店中のみオプション
-      is_show_closed: false,
       cards: [
           {
             // TODO 開店中かの判定を作成する
