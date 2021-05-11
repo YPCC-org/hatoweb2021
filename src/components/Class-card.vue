@@ -49,14 +49,6 @@
                 >
                     Closed
                 </v-chip>
-                <!-- <v-chip -->
-                <!-- class="mr-2" -->
-                <!-- outlined -->
-                <!-- x-small -->
-                <!-- :color="statusColor[api.status - 1]" -->
-                <!-- v-if="api &#38;&#38; isOpen"> -->
-                <!--     混雑:{{ api.status }} -->
-                <!-- </v-chip> -->
                 <v-chip
                 :color="statusColor[api.status - 1]"
                 class="mr-2"
