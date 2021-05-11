@@ -18,12 +18,12 @@
             <v-dialog v-model="popupEnable">
                 <v-card style="height: 800">
                     <v-card-title>
-                            <table style="width: 100%;" border=0>
+                            <table width="100%" border=0>
                                 <tr>
-                                    <td>
+                                    <td style="padding-right: 1em;">
                                         {{ title }}
                                     </td>
-                                    <td style="width: 1em;">
+                                    <td width="1em" valign="top">
                                         <v-btn icon @click="popupEnable = false"><v-icon>mdi-close-circle</v-icon></v-btn>
                                     </td>
                                 </tr>
