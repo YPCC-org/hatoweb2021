@@ -9,25 +9,24 @@
                 <!-- 画像 -->
                 <v-img contain height="100%" :src="src" @click="popupEnable = true"></v-img>
             </div>
-            <table width="100%"><tr>
-                <td @click="popupEnable = true;checkIsFav()">
-                <!-- クラス展の名前 -->
-                <v-card-subtitle>
-                    {{ title }}
-                </v-card-subtitle>
-                </td><td width="1em" valign="top">
-                    <!-- 閉じるボタン -->
-                    <v-card-actions>
-                        <v-btn
-                        icon
-                        :color="favoriteColor[isFav]"
-                        @click="favorite"
-                        >
-                            <v-icon>mdi-heart</v-icon>
-                        </v-btn>
-                    </v-card-actions>
-                </td>
-            </tr></table>
+            <div style="position: relative;">
+                <div @click="popupEnable = true;checkIsFav()">
+                    <!-- クラス展の名前 -->
+                    <v-card-subtitle style="width: calc(100% - 30px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        {{ title }}
+                    </v-card-subtitle>
+                </div>
+                <!-- 閉じるボタン -->
+                <v-card-actions style="position: absolute; top: 0; right: 0;">
+                    <v-btn
+                    icon
+                    :color="favoriteColor[isFav]"
+                    @click="favorite"
+                    >
+                        <v-icon>mdi-heart</v-icon>
+                    </v-btn>
+                </v-card-actions>
+            </div>
             <div @click="popupEnable = true;checkIsFav()">
             <!-- ステータス -->
             <v-card-text>
