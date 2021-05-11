@@ -44,13 +44,33 @@
                 >
                     Closed
                 </v-chip>
+                <!-- <v-chip -->
+                <!-- class="mr-2" -->
+                <!-- outlined -->
+                <!-- x-small -->
+                <!-- :color="statusColor[api.status - 1]" -->
+                <!-- v-if="api &#38;&#38; isOpen"> -->
+                <!--     混雑:{{ api.status }} -->
+                <!-- </v-chip> -->
                 <v-chip
+                :color="statusColor[api.status - 1]"
                 class="mr-2"
                 outlined
                 x-small
-                :color="statusColor[api.status - 1]"
-                v-if="api && isOpen">
-                    混雑:{{ api.status }}
+                v-if="api && isOpen"
+                >
+                    <v-icon
+                    v-for="i in api.status"
+                    :key="i"
+                    :color="statusColor[api.status - 1]"
+                    small
+                    style="width: 0.5em;">mdi-human-male</v-icon>
+                    <v-icon
+                    v-for="i in (5 - api.status)"
+                    :key="i"
+                    color="grey"
+                    small
+                    style="width: 0.5em;">mdi-human-male</v-icon>
                 </v-chip>
             </v-card-text>
             </div>
@@ -114,12 +134,24 @@
                         Closed
                     </v-chip>
                     <v-chip
+                    :color="statusColor[api.status - 1]"
                     class="mr-2"
                     outlined
                     x-small
-                    :color="statusColor[api.status - 1]"
-                    v-if="api && isOpen">
-                        混雑:{{ api.status }}
+                    v-if="api && isOpen"
+                    >
+                        <v-icon
+                        v-for="i in api.status"
+                        :key="i"
+                        :color="statusColor[api.status - 1]"
+                        small
+                        style="width: 0.5em;">mdi-human-male</v-icon>
+                        <v-icon
+                        v-for="i in (5 - api.status)"
+                        :key="i"
+                        color="grey"
+                        small
+                        style="width: 0.5em;">mdi-human-male</v-icon>
                     </v-chip>
                 </v-card-text>
                 <!-- 説明 -->
