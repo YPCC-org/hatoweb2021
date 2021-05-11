@@ -40,7 +40,7 @@
                 class="mr-2"
                 outlined
                 x-small
-                v-if="!isOpen"
+                v-else
                 >
                     Closed
                 </v-chip>
@@ -109,7 +109,7 @@
                     class="mr-2"
                     outlined
                     x-small
-                    v-if="!isOpen"
+                    v-else
                     >
                         Closed
                     </v-chip>
