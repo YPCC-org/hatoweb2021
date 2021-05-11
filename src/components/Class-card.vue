@@ -251,7 +251,7 @@ export default {
     },
   },
   data: () => ({
-    favoriteColor: ["gray", "pink"],
+    favoriteColor: ["#616161", "pink"],
     statusColor: ["blue", "cyan", "green", "orange", "red"],
     isFav: 0,
     isOpenFavSnackBar: false,
