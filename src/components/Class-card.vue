@@ -8,22 +8,27 @@
             <div style="position: relative">
                 <!-- 画像 -->
                 <v-img contain height="100%" :src="src" @click="popupEnable = true"></v-img>
-                <!-- 閉じるボタン -->
-                <v-card-actions style="float: right; position: absolute; right: 0px; top: 0px">
-                    <v-btn
-                    icon
-                    :color="favoriteColor[isFav]"
-                    @click="favorite()"
-                    >
-                        <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                </v-card-actions>
             </div>
+            <table width="100%"><tr>
+                <td @click="popupEnable = true;checkIsFav()">
+                <!-- クラス展の名前 -->
+                <v-card-subtitle>
+                    {{ title }}
+                </v-card-subtitle>
+                </td><td width="1em" valign="top">
+                    <!-- 閉じるボタン -->
+                    <v-card-actions>
+                        <v-btn
+                        icon
+                        :color="favoriteColor[isFav]"
+                        @click="favorite"
+                        >
+                            <v-icon>mdi-heart</v-icon>
+                        </v-btn>
+                    </v-card-actions>
+                </td>
+            </tr></table>
             <div @click="popupEnable = true;checkIsFav()">
-            <!-- クラス展の名前 -->
-            <v-card-subtitle>
-                {{ title }}
-            </v-card-subtitle>
             <!-- ステータス -->
             <v-card-text>
                 <v-chip
@@ -89,19 +94,21 @@
             </div>
                 <!-- クラス展の名前 -->
                 <v-card-title>
-                    <div style="display: inline-block">
-                        {{ title }}
-                    </div>
-                    <!-- お気に入りボタン -->
-                    <div style="display: inline-block;float: right">
-                        <v-btn
-                        icon
-                        :color="favoriteColor[isFav]"
-                        @click="favorite()"
-                        >
-                            <v-icon>mdi-heart</v-icon>
-                        </v-btn>
-                    </div>
+                    <table width="100%"><tr>
+                        <td>
+                            {{ title }}
+                        </td>
+                        <!-- お気に入りボタン -->
+                        <td width="1em" valign="top">
+                            <v-btn
+                            icon
+                            :color="favoriteColor[isFav]"
+                            @click="favorite()"
+                            >
+                                <v-icon>mdi-heart</v-icon>
+                            </v-btn>
+                        </td>
+                    </tr></table>
                 </v-card-title>
                 <!-- 一言コメント -->
                 <v-card-text v-if="api">
@@ -229,6 +236,9 @@ export default {
     this.checkIsFav()
   },
   methods: {
+    popupFunc: function(arg) {
+        alert(arg)
+    },
     // Tabが読み込まれたとき発火
     checkIsFav: function() {
     console.log("updated")
