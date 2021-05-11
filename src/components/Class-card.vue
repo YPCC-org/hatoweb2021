@@ -6,6 +6,7 @@
         outlined
         elevation="3">
             <div style="position: relative">
+                <v-card-subtitle style="position: absolute; top; 0; left: 0; z-index: 1; padding: 0 0.5em; background-color: white; border-radius: 0 0 0.5em 0;">{{ classkey[0] }}-{{ classkey[1] }}</v-card-subtitle>
                 <!-- 画像 -->
                 <v-img contain height="100%" :src="src" @click="popupEnable = true"></v-img>
             </div>
