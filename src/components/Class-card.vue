@@ -48,7 +48,7 @@
                 class="mr-2"
                 outlined
                 x-small
-                color="blue"
+                :color="statusColor[api.status - 1]"
                 v-if="api">
                     混雑:{{ api.status }}
                 </v-chip>
@@ -117,7 +117,7 @@
                     class="mr-2"
                     outlined
                     x-small
-                    color="blue"
+                    :color="statusColor[api.status - 1]"
                     v-if="api">
                         混雑:{{ api.status }}
                     </v-chip>
@@ -220,6 +220,7 @@ export default {
   },
   data: () => ({
     favoriteColor: ["gray", "pink"],
+    statusColor: ["blue", "cyan", "green", "orange", "red"],
     isFav: 0,
     isOpenFavSnackBar: false,
   }),
