@@ -77,12 +77,6 @@
                 </div>
                 <div v-else>
                     <v-container>
-                        <v-checkbox
-                        v-model="is_show_closed"
-                        hide-details
-                        label="開店中のみ"></v-checkbox>
-                    </v-container>
-                    <v-container>
                         <v-row>
                             <v-col
                             cols="6"
