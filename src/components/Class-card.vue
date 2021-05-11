@@ -49,7 +49,7 @@
                 outlined
                 x-small
                 :color="statusColor[api.status - 1]"
-                v-if="api">
+                v-if="api && isOpen">
                     混雑:{{ api.status }}
                 </v-chip>
             </v-card-text>
@@ -118,7 +118,7 @@
                     outlined
                     x-small
                     :color="statusColor[api.status - 1]"
-                    v-if="api">
+                    v-if="api && isOpen">
                         混雑:{{ api.status }}
                     </v-chip>
                 </v-card-text>
