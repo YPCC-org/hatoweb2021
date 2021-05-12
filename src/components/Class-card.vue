@@ -69,6 +69,19 @@
                     small
                     style="width: 0.5em;">mdi-human-male</v-icon>
                 </v-chip>
+                <v-chip
+                class="mr-2"
+                outlined
+                x-small
+                v-if="api && !isOpen"
+                style="visibility: hidden;"
+                >
+                    <v-icon
+                    v-for="i in 5"
+                    :key="i"
+                    small
+                    style="width: 0.5em;">mdi-human-male</v-icon>
+                </v-chip>
             </v-card-text>
             </div>
         </v-card>
