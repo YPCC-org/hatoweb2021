@@ -17,7 +17,7 @@
                         {{ title }}
                     </v-card-subtitle>
                 </div>
-                <!-- 閉じるボタン -->
+                <!-- お気に入りボタン -->
                 <v-card-actions style="position: absolute; top: 0; right: 0;">
                     <v-btn
                     icon
@@ -259,9 +259,11 @@ export default {
             this.$cookies.set(this.classkey, true);
             this.isOpenFavSnackBar = true;
             this.isFav = 1;
+            this.$emit("refreshFav");
         } else if (this.isFav == 1){
             this.$cookies.remove(this.classkey);
             this.isFav = 0;
+            this.$emit("refreshFav");
         }
     },
   },

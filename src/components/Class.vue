@@ -32,12 +32,11 @@
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->
         <!--タブ50px分下げる-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
+        <swiper style="min-height: calc(100vh - 105px); margin-top: 50px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided">
             <!-- 通常のクラス展 -->
-            <v-tab-item
+            <swiper-slide
             v-for="card in cards"
             :key="card.id"
-            :value="`tab-${card.id}`"
             >
                 <v-container>
                     <v-row>
@@ -53,15 +52,16 @@
                             :src="class_card.src"
                             :text="class_card.text"
                             :api="class_ten_api[class_card.key]"
-                            :isOpen="class_card.isOpen"></classCard>
+                            :isOpen="class_card.isOpen"
+                            @refreshFav="refreshFav"></classCard>
                         </v-col>
                     </v-row>
                 </v-container>
-            </v-tab-item>
+            </swiper-slide>
 
             <!-- お気に入り -->
-            <v-tab-item
-            value="tab-5"
+            <swiper-slide
+            v-if="showFav"
             >
                 <div v-if="!allClasses().length">
                     <v-container>
@@ -95,20 +95,31 @@
                         </v-row>
                     </v-container>
                 </div>
-            </v-tab-item>
-        </v-tabs-items>
+            </swiper-slide>
+        </swiper>
 
     </div>
 </template>
 
+<style>
+    .swiper-wrapper {
+        box-sizing: border-box;
+    }
+</style>
+
 <script>
 import classCard from "@/components/Class-card.vue";
 import axios from "axios"
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+
+import 'swiper/swiper-bundle.css'
 
 export default {
     name: 'Class',
     components: {
       classCard,
+      Swiper,
+      SwiperSlide,
     },
 
     // APIを定期取得
@@ -141,12 +152,22 @@ export default {
             }
             return allCards.filter(c => this.$cookies.isKey(c.key))
         },
+        refreshFav: function () {
+            this.showFav = false;
+            this.showFav = true;
+        },
+        swiperSlided: function () {
+            this.refreshFav();
+            let tab = this.$refs.tabItems.$swiper.activeIndex + 1;
+            this.selected_tab = 'tab-' + tab;
+        },
     },
     mounted () {
         axios
             .get('https://hatoweb-api.herokuapp.com/class_ten')
             .then(response => this.setClasstenApi(response));
         this.apiIntervalId = setInterval(this.getClasstenApi, 600000);
+        this.$refs.tabItems.$swiper.slideTo(this.$route.query.tab - 1, 0);
     },
     beforeDestroy () {
       console.log('clearInterval');
@@ -286,12 +307,32 @@ export default {
               ]
           },
       ],
+      swiperOptions: {
+        autoHeight: true,
+        keyboard: {
+            enabled: true,
+        },
+      },
+      showFav: true,
       tabnum: 5,
     }),
     computed: {
         selected_tab: {
             set: function (tab) {
                 this.$router.replace({ query: { tab: tab.slice(-1) } });
+                let swiperTab = this.$refs.tabItems.$swiper.activeIndex + 1;
+                if (tab.slice(-1) != swiperTab) {
+                    let diff = tab.slice(-1) - swiperTab;
+                    if (diff > 0) {
+                        [...Array(diff)].map(() =>
+                            this.$refs.tabItems.$swiper.slideNext()
+                        );
+                    } else {
+                        [...Array(diff * -1)].map(() =>
+                            this.$refs.tabItems.$swiper.slidePrev()
+                        );
+                    }
+                }
             },
             get: function () {
                 var tab = this.$route.query.tab;
