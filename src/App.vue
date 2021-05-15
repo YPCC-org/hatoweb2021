@@ -3,6 +3,7 @@
     <v-main>
         <v-app-bar
         color="white"
+        height="55px"
         fixed
         >
             <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>

@@ -6,6 +6,7 @@
         fixed
         flat
         color="white"
+        height="60px"
         style="top: 55px;">
             <v-tabs
             fixed-tabs
@@ -26,7 +27,7 @@
         <!-- タブの内容 -->
         <!--ヘッダー55pxタブ50pxを引いた高さ-->
         <!--タブ50px分下げる-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 50px;">
+        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 60px;">
             <v-tab-item
             v-for="day in days"
             :key="day.id"

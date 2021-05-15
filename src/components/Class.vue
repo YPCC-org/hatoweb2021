@@ -7,6 +7,7 @@
         fixed
         flat
         color="white"
+        height="60px"
         style="top: 55px;">
             <v-tabs
             fixed-tabs
@@ -30,9 +31,8 @@
         </v-app-bar>
 
         <!-- タブの内容 -->
-        <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <!--タブ50px分下げる-->
-        <swiper style="min-height: calc(100vh - 105px); margin-top: 50px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided">
+        <!--タブ60px分下げる-->
+        <swiper style="margin-top: 60px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided">
             <!-- 通常のクラス展 -->
             <swiper-slide
             v-for="card in cards"
@@ -308,7 +308,6 @@ export default {
           },
       ],
       swiperOptions: {
-        autoHeight: true,
         keyboard: {
             enabled: true,
         },
