@@ -25,13 +25,11 @@
         </v-app-bar>
 
         <!-- タブの内容 -->
-        <!--ヘッダー55pxタブ50pxを引いた高さ-->
-        <!--タブ50px分下げる-->
-        <v-tabs-items v-model="selected_tab" style="min-height: calc(100vh - 105px); margin-top: 60px;">
-            <v-tab-item
+        <!--タブ60px分下げる-->
+        <swiper style="margin-top: 60px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided">
+            <swiper-slide
             v-for="day in days"
             :key="day.id"
-            :value="`tab-${day.id}`"
             >
                 <v-container>
                     <v-calendar
@@ -70,8 +68,8 @@
                         </v-card-text>
                     </v-card>
                 </v-dialog>
-            </v-tab-item>
-        </v-tabs-items>
+            </swiper-slide>
+        </swiper>
     </div>
 </template>
 
@@ -85,11 +83,18 @@
 </style>
 
 <script>
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+
+import 'swiper/swiper-bundle.css'
+
 export default {
     name: 'Schedule',
     mounted () {
+        this.$refs.tabItems.$swiper.slideTo(this.$route.query.tab - 1, 0);
     },
     components: {
+        Swiper,
+        SwiperSlide,
     },
     methods: {
         getEventColor (event) {
@@ -99,11 +104,28 @@ export default {
             this.popupEnable = true;
             this.popuping = arg.event;
         },
+        swiperSlided: function () {
+            let tab = this.$refs.tabItems.$swiper.activeIndex + 1;
+            this.selected_tab = 'tab-' + tab;
+        },
     },
     computed: {
             selected_tab: {
                 set: function (tab) {
                     this.$router.replace({ query: { tab: tab.slice(-1) } });
+                    let swiperTab = this.$refs.tabItems.$swiper.activeIndex + 1;
+                    if (tab.slice(-1) != swiperTab) {
+                        let diff = tab.slice(-1) - swiperTab;
+                        if (diff > 0) {
+                            [...Array(diff)].map(() =>
+                                this.$refs.tabItems.$swiper.slideNext()
+                            );
+                        } else {
+                            [...Array(diff * -1)].map(() =>
+                                this.$refs.tabItems.$swiper.slidePrev()
+                            );
+                        }
+                    }
                 },
                 get: function () {
                     var tab = this.$route.query.tab;
@@ -119,6 +141,11 @@ export default {
             },
     },
     data: () => ({
+        swiperOptions: {
+            keyboard: {
+                enabled: true,
+            },
+        },
         tabnum: 3,
         popupEnable: false,
         popuping: null,
