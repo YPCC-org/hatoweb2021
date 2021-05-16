@@ -318,7 +318,10 @@ export default {
     computed: {
         selected_tab: {
             set: function (tab) {
-                this.$router.replace({ query: { tab: tab.slice(-1) } });
+                let router = this.$router;
+                setTimeout(function() {
+                    router.replace({ query: { tab: tab.slice(-1) } });
+                });
                 let swiperTab = this.$refs.tabItems.$swiper.activeIndex + 1;
                 if (tab.slice(-1) != swiperTab) {
                     let diff = tab.slice(-1) - swiperTab;
