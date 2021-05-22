@@ -48,6 +48,7 @@
                             <classCard
                             v-if="class_card.isOpen || !is_show_closed"
                             :classkey="class_card.key"
+                            :room="class_card.room"
                             :title="class_card.title"
                             :src="class_card.src"
                             :text="class_card.text"
@@ -86,6 +87,7 @@
                                 <classCard
                                 v-if="class_card.isOpen || !is_show_closed"
                                 :classkey="class_card.key"
+                                :room="class_card.room"
                                 :title="class_card.title"
                                 :src="class_card.src"
                                 :text="class_card.text"
@@ -184,28 +186,46 @@ export default {
             // TODO 開店中かの判定を作成する
               id: 1, grade: "中学", classes: [
                   {
-                      key: "1A", title: "1-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "1A",
+                      room: "1-A",
+                      title: "1-A",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       text: "ここには1-Aのクラス展の説明が入ります\n改行も\n可能です",
                       isOpen: true
                   },
                   {
-                      key: "1B", title: "1-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "1B",
+                      room: "1-B",
+                      title: "1-B",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: false
                   },
                   {
-                      key: "2A", title: "2-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "2A",
+                      room: "2-A",
+                      title: "2-A",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "2B", title: "2-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "2B",
+                      room: "2-B",
+                      title: "2-B",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "3A", title: "3-A", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "3A",
+                      room: "3-A",
+                      title: "3-A",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: false
                   },
                   {
-                      key: "3B", title: "3-B", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "3B",
+                      room: "3-B",
+                      title: "3-B",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
               ]
@@ -213,31 +233,52 @@ export default {
           {
               id: 2, grade: "高1", classes: [
                   {
-                      key: "11", title: "1-1", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "11",
+                      room: "1-1",
+                      title: "1-1",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "12", title: "1-2", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "12",
+                      room: "1-2",
+                      title: "1-2",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "13", title: "1-3", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "13",
+                      room: "1-3",
+                      title: "1-3",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "14", title: "1-4", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "14",
+                      room: "1-4",
+                      title: "1-4",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "15", title: "1-5", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "15",
+                      room: "1-5",
+                      title: "1-5",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "16", title: "1-6", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "16",
+                      room: "1-6",
+                      title: "1-6",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "17", title: "1-7", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "17",
+                      room: "1-7",
+                      title: "1-7",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
               ]
@@ -245,31 +286,52 @@ export default {
           {
               id: 3, grade: "高2", classes: [
                   {
-                      key: "21", title: "2-1", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "21",
+                      room: "232",
+                      title: "2-1",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "22", title: "2-2", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "22",
+                      room: "233",
+                      title: "2-2",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "23", title: "2-3", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "23",
+                      room: "234",
+                      title: "2-3",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "24", title: "2-4", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "24",
+                      room: "212",
+                      title: "2-4",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "25", title: "2-5", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "25",
+                      room: "213",
+                      title: "2-5",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "26", title: "2-6", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "26",
+                      room: "223",
+                      title: "2-6",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "27", title: "2-7", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "27",
+                      room: "224",
+                      title: "2-7",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
               ]
@@ -277,31 +339,52 @@ export default {
           {
               id: 4, grade: "高3", classes: [
                   {
-                      key: "31", title: "3-1", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "31",
+                      room: "3-1",
+                      title: "3-1",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "32", title: "3-2", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "32",
+                      room: "3-2",
+                      title: "3-2",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "33", title: "3-3", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "33",
+                      room: "3-3",
+                      title: "3-3",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "34", title: "3-4", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "34",
+                      room: "3-4",
+                      title: "3-4",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "35", title: "3-5", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "35",
+                      room: "3-5",
+                      title: "3-5",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "36", title: "3-6", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "36",
+                      room: "3-6",
+                      title: "3-6",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
                   {
-                      key: "37", title: "3-7", src: require("@/assets/class_image/1/1-1.jpg"),
+                      key: "37",
+                      room: "3-7",
+                      title: "3-7",
+                      src: require("@/assets/class_image/1/1-1.jpg"),
                       isOpen: true
                   },
               ]
