@@ -26,7 +26,7 @@
 
         <!-- タブの内容 -->
         <!--タブ60px分下げる-->
-        <swiper style="margin-top: 60px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided">
+        <swiper style="margin-top: 60px;" ref="tabItems" :options="swiperOptions" @slideChange="swiperSlided" @slideChangeTransitionEnd="swiperSlideEnd">
             <swiper-slide
             v-for="day in days"
             :key="day.id"
@@ -108,14 +108,14 @@ export default {
             let tab = this.$refs.tabItems.$swiper.activeIndex + 1;
             this.selected_tab = 'tab-' + tab;
         },
+        swiperSlideEnd: function() {
+            this.$router.replace({ query: { tab: this.selected_tab.slice(-1) } });
+        },
     },
     computed: {
             selected_tab: {
                 set: function (tab) {
-                    let router = this.$router;
-                    setTimeout(function() {
-                        router.replace({ query: { tab: tab.slice(-1) } });
-                    });
+                    this.currentTab = tab.slice(-1);
                     let swiperTab = this.$refs.tabItems.$swiper.activeIndex + 1;
                     if (tab.slice(-1) != swiperTab) {
                         let diff = tab.slice(-1) - swiperTab;
@@ -131,7 +131,7 @@ export default {
                     }
                 },
                 get: function () {
-                    var tab = this.$route.query.tab;
+                    var tab = this.currentTab;
                     var ctab;
                     if (tab > 0 && tab <= this.tabnum) {
                         ctab = 'tab-' + tab;
@@ -150,6 +150,7 @@ export default {
             },
         },
         tabnum: 3,
+        currentTab: 1,
         popupEnable: false,
         popuping: null,
         days: [
