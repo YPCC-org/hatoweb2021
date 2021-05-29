@@ -399,7 +399,7 @@ export default {
       },
       showFav: true,
       tabnum: 5,
-      currentTab: 1,
+      currentTab: null,
     }),
     computed: {
         selected_tab: {
@@ -425,8 +425,12 @@ export default {
                 if (tab > 0 && tab <= this.tabnum) {
                     ctab = 'tab-' + tab;
                 } else {
-                    this.$router.replace({ query: { tab: '1' } });
-                    ctab = 'tab-1';
+                    if (this.$route.query.tab != undefined) {
+                        ctab = 'tab-' + this.$route.query.tab;
+                    } else {
+                        this.$router.replace({ query: { tab: '1' } });
+                        ctab = 'tab-1';
+                    }
                 }
                 return ctab
             }

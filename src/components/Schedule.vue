@@ -136,8 +136,12 @@ export default {
                     if (tab > 0 && tab <= this.tabnum) {
                         ctab = 'tab-' + tab;
                     } else {
-                        this.$router.replace({ query: { tab: '1' } });
-                        ctab = 'tab-1';
+                        if (this.$route.query.tab != undefined) {
+                            ctab = 'tab-' + this.$route.query.tab;
+                        } else {
+                            this.$router.replace({ query: { tab: '1' } });
+                            ctab = 'tab-1';
+                        }
                     }
                     return ctab
                 }
@@ -150,7 +154,7 @@ export default {
             },
         },
         tabnum: 3,
-        currentTab: 1,
+        currentTab: null,
         popupEnable: false,
         popuping: null,
         days: [
