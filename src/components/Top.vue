@@ -3,8 +3,9 @@
     <div style="width: 100%; height: 2.5px; background-color: #7E57C2;"></div>
 
         <!-- カルーセル(トップの切り替え可能な画像) -->
-        <v-container>
-            <v-card>
+        <v-container class="px-0 pt-0">
+            <v-card
+            flat>
                 <v-carousel
                 :height="carousel_height"
                 hide-delimiter-background
