@@ -6,7 +6,6 @@
         height="55px"
         fixed
         flat
-        style="border-bottom: 3px solid #7E57C2; box-sizing: border-box;"
         >
             <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>
             <v-toolbar-title>

@@ -1,5 +1,6 @@
 <template>
     <div>
+    <div style="width: 100%; height: 2.5px; background-color: #7E57C2;"></div>
 
         <!-- カルーセル(トップの切り替え可能な画像) -->
         <v-container>
