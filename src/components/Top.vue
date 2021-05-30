@@ -36,14 +36,15 @@
         <!-- ページへのリンク -->
         <v-container>
             <v-row>
-                <v-col cols="6" v-for="link_button in link_buttons" v-bind:key="link_button.link">
+                <v-col cols="11" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3">
                     <v-card
-                    outlined
-                    elevation="3"
-                    style="text-align: center"
-                    :to="link_button.link">
-                        <v-card-text>
-                            <v-icon>{{ link_button.icon }}</v-icon>
+                    flat
+                    :to="link_button.link"
+                    :style="'border: 2.5px solid ' + link_button.color + ';'"
+                    class="py-0 my-0 rounded-2"
+                    style="text-align: center;">
+                        <v-card-text :style="{color: link_button.color}">
+                            <v-icon :style="{color: link_button.color}">{{ link_button.icon }}</v-icon>
                             <v-spacer></v-spacer>
                             {{ link_button.text }}
                         </v-card-text>
@@ -130,8 +131,8 @@ export default {
     ],
 
     link_buttons: [
-        { text: "クラス展", link: "/class", icon: "mdi-account-group"},
-        { text: "スケジュール", link: "/schedule", icon: "mdi-clock"},
+        { text: "クラス展", link: "/class", icon: "mdi-account-group", color: "#FF9800"},
+        { text: "スケジュール", link: "/schedule", icon: "mdi-clock", color: "#2196F3"},
         /* { text: "お知らせ", link: ""}, */
         /* { text: "販売", link: ""}, */
     ],
