@@ -52,7 +52,7 @@
         </v-row>
 
         <!-- ご挨拶 -->
-        <v-row>
+        <v-row class="mx-auto">
             <v-col cols="12" md="10" class="mx-auto py-0 pb-3 px-3">
                 <v-card
                 flat
@@ -69,7 +69,7 @@
         </v-row>
 
         <!-- お知らせ -->
-        <v-row>
+        <v-row class="mx-auto">
             <v-col cols="11" md="10" class="mx-auto py-0 pb-3 px-3">
                 <v-card
                 max-height="300"
