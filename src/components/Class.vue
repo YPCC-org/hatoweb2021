@@ -48,6 +48,7 @@
                         >
                             <classCard
                             v-if="class_card.isOpen || !is_show_closed"
+                            :tab="class_card.tab"
                             :classkey="class_card.key"
                             :room="class_card.room"
                             :title="class_card.title"
@@ -87,6 +88,7 @@
                             >
                                 <classCard
                                 v-if="class_card.isOpen || !is_show_closed"
+                                :tab="class_card.tab"
                                 :classkey="class_card.key"
                                 :room="class_card.room"
                                 :title="class_card.title"
@@ -190,6 +192,7 @@ export default {
               id: 1, grade: "中学", classes: [
                   {
                       key: "1A",
+                      tab: 1,
                       room: "1-A",
                       title: "1-A",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -198,6 +201,7 @@ export default {
                   },
                   {
                       key: "1B",
+                      tab: 1,
                       room: "1-B",
                       title: "1-B",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -205,6 +209,7 @@ export default {
                   },
                   {
                       key: "2A",
+                      tab: 1,
                       room: "2-A",
                       title: "2-A",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -212,6 +217,7 @@ export default {
                   },
                   {
                       key: "2B",
+                      tab: 1,
                       room: "2-B",
                       title: "2-B",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -219,6 +225,7 @@ export default {
                   },
                   {
                       key: "3A",
+                      tab: 1,
                       room: "3-A",
                       title: "3-A",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -226,6 +233,7 @@ export default {
                   },
                   {
                       key: "3B",
+                      tab: 1,
                       room: "3-B",
                       title: "3-B",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -237,6 +245,7 @@ export default {
               id: 2, grade: "高1", classes: [
                   {
                       key: "11",
+                      tab: 2,
                       room: "1-1",
                       title: "1-1",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -244,6 +253,7 @@ export default {
                   },
                   {
                       key: "12",
+                      tab: 2,
                       room: "1-2",
                       title: "1-2",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -251,6 +261,7 @@ export default {
                   },
                   {
                       key: "13",
+                      tab: 2,
                       room: "1-3",
                       title: "1-3",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -258,6 +269,7 @@ export default {
                   },
                   {
                       key: "14",
+                      tab: 2,
                       room: "1-4",
                       title: "1-4",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -265,6 +277,7 @@ export default {
                   },
                   {
                       key: "15",
+                      tab: 2,
                       room: "1-5",
                       title: "1-5",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -272,6 +285,7 @@ export default {
                   },
                   {
                       key: "16",
+                      tab: 2,
                       room: "1-6",
                       title: "1-6",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -279,6 +293,7 @@ export default {
                   },
                   {
                       key: "17",
+                      tab: 2,
                       room: "1-7",
                       title: "1-7",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -290,6 +305,7 @@ export default {
               id: 3, grade: "高2", classes: [
                   {
                       key: "21",
+                      tab: 3,
                       room: "232",
                       title: "2-1",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -297,6 +313,7 @@ export default {
                   },
                   {
                       key: "22",
+                      tab: 3,
                       room: "233",
                       title: "2-2",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -304,6 +321,7 @@ export default {
                   },
                   {
                       key: "23",
+                      tab: 3,
                       room: "234",
                       title: "2-3",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -311,6 +329,7 @@ export default {
                   },
                   {
                       key: "24",
+                      tab: 3,
                       room: "212",
                       title: "2-4",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -318,6 +337,7 @@ export default {
                   },
                   {
                       key: "25",
+                      tab: 3,
                       room: "213",
                       title: "2-5",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -325,6 +345,7 @@ export default {
                   },
                   {
                       key: "26",
+                      tab: 3,
                       room: "223",
                       title: "2-6",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -332,6 +353,7 @@ export default {
                   },
                   {
                       key: "27",
+                      tab: 3,
                       room: "224",
                       title: "2-7",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -343,6 +365,7 @@ export default {
               id: 4, grade: "高3", classes: [
                   {
                       key: "31",
+                      tab: 4,
                       room: "3-1",
                       title: "3-1",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -350,6 +373,7 @@ export default {
                   },
                   {
                       key: "32",
+                      tab: 4,
                       room: "3-2",
                       title: "3-2",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -357,6 +381,7 @@ export default {
                   },
                   {
                       key: "33",
+                      tab: 4,
                       room: "3-3",
                       title: "3-3",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -364,6 +389,7 @@ export default {
                   },
                   {
                       key: "34",
+                      tab: 4,
                       room: "3-4",
                       title: "3-4",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -371,6 +397,7 @@ export default {
                   },
                   {
                       key: "35",
+                      tab: 4,
                       room: "3-5",
                       title: "3-5",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -378,6 +405,7 @@ export default {
                   },
                   {
                       key: "36",
+                      tab: 4,
                       room: "3-6",
                       title: "3-6",
                       src: require("@/assets/class_image/1/1-1.jpg"),
@@ -385,6 +413,7 @@ export default {
                   },
                   {
                       key: "37",
+                      tab: 4,
                       room: "3-7",
                       title: "3-7",
                       src: require("@/assets/class_image/1/1-1.jpg"),

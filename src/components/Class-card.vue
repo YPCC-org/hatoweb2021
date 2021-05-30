@@ -26,6 +26,13 @@
                     >
                         <v-icon>mdi-heart</v-icon>
                     </v-btn>
+                    <v-btn
+                    icon
+                    v-if="shareable"
+                    @click="share"
+                    >
+                        <v-icon>mdi-share-variant</v-icon>
+                    </v-btn>
                 </v-card-actions>
             </div>
             <div @click="popupEnable = true;checkIsFav()">
@@ -111,6 +118,13 @@
                             @click="favorite()"
                             >
                                 <v-icon>mdi-heart</v-icon>
+                            </v-btn>
+                            <v-btn
+                            icon
+                            v-if="shareable"
+                            @click="share"
+                            >
+                                <v-icon>mdi-share-variant</v-icon>
                             </v-btn>
                         </td>
                     </tr></table>
@@ -198,7 +212,7 @@ export default {
   // text       : クラス展の説明
   // isOpen     : クラス展が開いているか
   // api        : APIの返り値
-  props: ['room', 'title', 'src', 'text', 'isOpen', 'api', 'classkey'],
+  props: ['room', 'title', 'src', 'text', 'isOpen', 'api', 'classkey', 'tab'],
   components: {
   },
   computed: {
@@ -235,10 +249,13 @@ export default {
     },
   },
   mounted () {
-    this.checkIsFav()
+    this.checkIsFav();
+    if (window.navigator.share) {
+        this.shareable = true;
+    }
   },
   updated () {
-    this.checkIsFav()
+    this.checkIsFav();
   },
   methods: {
     popupFunc: function(arg) {
@@ -266,12 +283,26 @@ export default {
             this.$emit("refreshFav");
         }
     },
+    share: function() {
+        let a = document.createElement('a');
+        a.href = window.location.href;
+        let url = String(window.location.href).replace(window.location.hash, '') + '#/class?tab=' + this.tab + '&class=' + this.classkey;
+        window.navigator.share({
+            url: url,
+        })
+        .catch((error) => {
+              // シェアせず終了した場合もここに入ってくる。
+              console.log('Error sharing', error);
+        }
+        );
+    },
   },
   data: () => ({
     favoriteColor: ["#616161", "pink"],
     statusColor: ["blue", "cyan", "green", "orange", "red"],
     isFav: 0,
     isOpenFavSnackBar: false,
+    shareable: false,
   }),
 };
 </script>
