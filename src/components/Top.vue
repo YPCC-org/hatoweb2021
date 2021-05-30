@@ -52,8 +52,8 @@
         </v-row>
 
         <!-- ご挨拶 -->
-        <v-row class="mx-auto">
-            <v-col cols="12" md="10" class="mx-auto py-0 pb-3 px-3">
+        <v-row class="mx-0">
+            <v-col cols="12" md="10" class="mx-auto py-0 pb-3 px-0">
                 <v-card
                 flat
                 class="py-0 my-0 rounded-0 px-3"
