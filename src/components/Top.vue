@@ -34,9 +34,8 @@
         </v-toolbar>
 
         <!-- ページへのリンク -->
-        <v-container>
-            <v-row>
-                <v-col cols="11" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3">
+            <v-row class="mx-auto py-3 col-md-10">
+                <v-col cols="11" md="6" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3 px-3">
                     <v-card
                     flat
                     :to="link_button.link"
@@ -51,7 +50,6 @@
                     </v-card>
                 </v-col>
             </v-row>
-        </v-container>
 
         <!-- ご挨拶 -->
         <v-container>
