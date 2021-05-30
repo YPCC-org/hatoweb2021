@@ -34,36 +34,39 @@
         </v-toolbar>
 
         <!-- ページへのリンク -->
-            <v-row class="mx-auto py-3 col-md-10">
-                <v-col cols="11" md="6" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3 px-3">
-                    <v-card
-                    flat
-                    :to="link_button.link"
-                    :style="'border: 2.5px solid ' + link_button.color + ';'"
-                    class="py-0 my-0 rounded-2"
-                    style="text-align: center;">
-                        <v-card-text :style="{color: link_button.color}">
-                            <v-icon :style="{color: link_button.color}">{{ link_button.icon }}</v-icon>
-                            <v-spacer></v-spacer>
-                            {{ link_button.text }}
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
+        <v-row class="mx-auto py-3 col-md-10">
+            <v-col cols="11" md="6" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3 px-3">
+                <v-card
+                flat
+                :to="link_button.link"
+                :style="'border: 2.5px solid ' + link_button.color + ';'"
+                class="py-0 my-0 rounded-2"
+                style="text-align: center;">
+                    <v-card-text :style="{color: link_button.color}">
+                        <v-icon :style="{color: link_button.color}">{{ link_button.icon }}</v-icon>
+                        <v-spacer></v-spacer>
+                        {{ link_button.text }}
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
 
         <!-- ご挨拶 -->
-        <v-container>
-            <v-card
-            elevation="3"
-            outlined>
-                <v-card-title>ご挨拶</v-card-title>
-                <v-card-text>
-                    あいさつの文章を<br>
-                    入力<br>
-                    することができます<br>
-                </v-card-text>
-            </v-card>
-        </v-container>
+        <v-row>
+            <v-col cols="12" md="10" class="mx-auto py-0 pb-3 px-3">
+                <v-card
+                flat
+                class="py-0 my-0 rounded-0 px-3"
+                >
+                    <v-card-title>ご挨拶</v-card-title>
+                    <v-card-text>
+                        あいさつの文章を<br>
+                        入力<br>
+                        することができます<br>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
 
         <!-- お知らせ -->
         <v-container>
