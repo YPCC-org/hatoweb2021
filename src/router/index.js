@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        name: 'Top',
+        name: '鳩祭',
         component: Top,
         meta: {
             title: 'トップページ | 鳩Web！',
@@ -19,7 +19,7 @@ const routes = [
     },
     {
         path: '/class',
-        name: 'Class',
+        name: 'クラス展',
         component: Class,
         meta: {
             title: 'クラス展 | 鳩Web！',
@@ -28,7 +28,7 @@ const routes = [
     },
     {
         path: '/schedule',
-        name: 'Schedule',
+        name: 'スケジュール',
         component: Schedule,
         meta: {
             title: 'スケジュール | 鳩Web！',

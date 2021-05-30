@@ -9,7 +9,7 @@
         >
             <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>
             <v-toolbar-title>
-                鳩祭
+                {{ this.$route.name }}
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon link href="https://www.instagram.com/p/CNo7BAVBkJN/">
