@@ -52,12 +52,24 @@
             </v-list>
         </v-navigation-drawer>
 
-        <!--ヘッダー55px分下げる-->
-        <router-view style="padding-top: 55px;"></router-view>
+
+        <transition mode=”out-in”>
+            <!--ヘッダー55px分下げる-->
+            <router-view style="padding-top: 55px;"></router-view>
+        </transition>
 
     </v-main>
   </v-app>
 </template>
+
+<style>
+    .v-enter-active, .v-leave-active {
+            transition: opacity .3s;
+        }
+        .v-enter, .v-leave-to {
+            opacity: 0;
+        }
+    </style>
 
 <script>
 export default {
