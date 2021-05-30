@@ -4,7 +4,7 @@
         <!-- カード一覧 -->
         <v-card
         outlined
-        elevation="3">
+        flat>
             <div style="position: relative">
                 <v-card-subtitle style="position: absolute; top; 0; left: 0; z-index: 1; padding: 0 0.5em; background-color: white; border-radius: 0 0 0.5em 0;">{{ room }}</v-card-subtitle>
                 <!-- 画像 -->
