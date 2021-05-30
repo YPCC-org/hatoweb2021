@@ -3,9 +3,14 @@
     <div style="width: 100%; height: 2.5px; background-color: #7E57C2;"></div>
 
         <!-- カルーセル(トップの切り替え可能な画像) -->
-        <v-container class="px-0 pt-0">
+        <v-toolbar
+        :height="carousel_height"
+        flat
+        >
             <v-card
-            flat>
+            flat
+            class="rounded-0"
+            width="100%">
                 <v-carousel
                 :height="carousel_height"
                 hide-delimiter-background
@@ -26,7 +31,7 @@
                     </v-carousel-item>
                 </v-carousel>
             </v-card>
-        </v-container>
+        </v-toolbar>
 
         <!-- ページへのリンク -->
         <v-container>
