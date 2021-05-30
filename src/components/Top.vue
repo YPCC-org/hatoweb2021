@@ -69,34 +69,36 @@
         </v-row>
 
         <!-- お知らせ -->
-        <v-container>
-            <v-card
-            max-height="300"
-            elevation="3"
-            style="overflow: scroll"
-            outlined>
-                <v-card-title>
-                    お知らせ
-                </v-card-title>
-                <v-card-subtitle style="text-align: right">
-                    最終更新：{{ infoLastUpdate }}
-                </v-card-subtitle>
-                <v-card-text>
-                    <v-simple-table>
-                        <template v:slot:default>
-                            <tbody>
-                                <InfoCard
-                                v-for="(info, index) in reversedInfoTexts"
-                                v-bind:key="index"
-                                :title="info.title"
-                                :text="info.value"
-                                :time="info.updated_at"></InfoCard>
-                            </tbody>
-                        </template>
-                    </v-simple-table>
-                </v-card-text>
-            </v-card>
-        </v-container>
+        <v-row>
+            <v-col cols="11" md="10" class="mx-auto py-0 pb-3 px-3">
+                <v-card
+                max-height="300"
+                flat
+                style="overflow: scroll; border: 2.5px solid#17a2b8;"
+                outlined>
+                    <v-card-title>
+                        お知らせ
+                    </v-card-title>
+                    <v-card-subtitle style="text-align: right">
+                        最終更新：{{ infoLastUpdate }}
+                    </v-card-subtitle>
+                    <v-card-text>
+                        <v-simple-table>
+                            <template v:slot:default>
+                                <tbody>
+                                    <InfoCard
+                                    v-for="(info, index) in reversedInfoTexts"
+                                    v-bind:key="index"
+                                    :title="info.title"
+                                    :text="info.value"
+                                    :time="info.updated_at"></InfoCard>
+                                </tbody>
+                            </template>
+                        </v-simple-table>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
 
     </div>
 </template>
