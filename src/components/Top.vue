@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <div style="width: 100%; height: 2.5px; background-color: #7E57C2;"></div>
+    <div style="margin-top: 2.5px;">
+    <v-app-bar fixed flat style="width: 100%; height: 2.5px; background-color: #7E57C2; top: 55px;"></v-app-bar>
 
         <!-- カルーセル(トップの切り替え可能な画像) -->
         <v-toolbar
