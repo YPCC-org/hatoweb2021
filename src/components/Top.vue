@@ -1,6 +1,5 @@
 <template>
-    <div style="margin-top: 2.5px;">
-    <v-app-bar fixed flat style="width: 100%; height: 2.5px; background-color: #7E57C2; top: 55px;"></v-app-bar>
+    <div>
 
         <!-- カルーセル(トップの切り替え可能な画像) -->
         <v-toolbar
@@ -34,8 +33,8 @@
         </v-toolbar>
 
         <!-- ページへのリンク -->
-        <v-row class="mx-auto py-3 col-md-10">
-            <v-col cols="11" md="6" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3 px-3">
+        <v-row class="mx-auto pt-3">
+            <v-col cols="11" md="6" v-for="link_button in link_buttons" v-bind:key="link_button.link" class="mx-auto py-0 mt-3">
                 <v-card
                 flat
                 :to="link_button.link"
@@ -52,11 +51,12 @@
         </v-row>
 
         <!-- ご挨拶 -->
-        <v-row class="mx-0">
-            <v-col cols="12" md="10" class="mx-auto py-0 pb-3 px-0">
+        <v-row class="mx-auto py-3">
+            <v-col cols="11" md="10" class="mx-auto py-0">
                 <v-card
                 flat
-                class="py-0 my-0 rounded-0 px-3"
+                class="py-0 my-0 rounded-2 px-3"
+                style="border: 2.5px solid #009688;"
                 >
                     <v-card-title>ご挨拶</v-card-title>
                     <v-card-text>
@@ -74,7 +74,7 @@
                 <v-card
                 max-height="300"
                 flat
-                style="overflow: scroll; border: 2.5px solid#17a2b8;"
+                style="overflow: scroll; border: 2.5px solid #17a2b8;"
                 outlined>
                     <v-card-title>
                         お知らせ

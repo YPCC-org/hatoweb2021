@@ -6,7 +6,7 @@
         <tr>
             <td>9:00</td>
             <td colspan=12 rowspan=2 class="pt-3 pl-5">
-                <v-card outlined elevation=1>
+                <v-card outlined>
                     <p>8:40 ~</p>
                     <p>クラス・係準備</p>
                     <p>前夜祭クラスリハ</p>
@@ -19,7 +19,7 @@
         <tr>
             <td>11:00</td>
             <td colspan=12 rowspan=1 class="pt-3 pl-5">
-                <v-card outlined elevation=1>
+                <v-card outlined>
                     <p>11:00 ~</p>
                     <p>清掃・昼食</p>
                 </v-card>
@@ -28,14 +28,14 @@
         <tr>
             <td>12:00</td>
             <td colspan=6 rowspan=2 class="pt-3 pl-5">
-                <v-card outlined elevation=1>
+                <v-card outlined>
                     <p>12:00 ~</p>
                     <p>ハト1GP</p>
                     <p>(グラウンド)</p>
                 </v-card>
             </td>
             <td colspan=6 rowspan=2 class="pt-3 pl-5">
-                <v-card outlined elevation=1>
+                <v-card outlined>
                     <p>12:00 ~</p>
                     <p>全校企画</p>
                     <p>(校舎内)</p>
@@ -48,7 +48,7 @@
         <tr>
             <td>14:00</td>
             <td colspan=12 rowspan=5 class="pt-3 pl-5">
-                <v-card outlined elevation=1 style="height: 250px;">
+                <v-card outlined style="height: 250px;">
                     <p>14:30 ~</p>
                     <br>
                     <p>開催式</p>

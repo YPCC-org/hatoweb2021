@@ -7,7 +7,7 @@
             <td>9:00</td>
             <td></td>
             <td colspan=11 rowspan=2>
-                <v-card outlined elevation=1>
+                <v-card outlined>
                     <p>8:40~</p>
                     <p>クラス・係準備</p>
                     <p>前夜祭クラスリハ</p>

@@ -2,8 +2,9 @@
   <v-app style="background-color: #f4f5f7;">
     <v-main>
         <v-app-bar
-        color="#fff"
+        color="dark"
         height="55px"
+        dark
         fixed
         flat
         >
