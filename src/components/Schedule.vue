@@ -13,7 +13,7 @@
             show-arrows
             center-active
             v-model="selected_tab"
-            color="deep-purple lighten-1"
+            color="blue"
             >
                 <v-tab href="#tab-1">
                     7/2 (金)

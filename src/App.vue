@@ -2,11 +2,10 @@
   <v-app style="background-color: #f4f5f7;">
     <v-main>
         <v-app-bar
-        color="dark"
+		color="white"
         height="55px"
-        dark
-        fixed
         flat
+        fixed
         >
             <v-app-bar-nav-icon @click="drawer=true"></v-app-bar-nav-icon>
             <v-toolbar-title>

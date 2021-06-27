@@ -14,7 +14,7 @@
             show-arrows
             center-active
             v-model="selected_tab"
-            color="deep-purple lighten-1"
+            color="orange"
             >
                 <v-tab
                 v-for="card in cards"
