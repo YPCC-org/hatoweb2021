@@ -42,12 +42,9 @@
                     <v-list-item link to="schedule">
                         <v-list-item-title>スケジュール</v-list-item-title>
                     </v-list-item>
-                    <!--
+                    <v-list-item link to="event">
+                        <v-list-item-title>イベント</v-list-item-title>
                     </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title>販売</v-list-item-title>
-                    </v-list-item>
-                    -->
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>

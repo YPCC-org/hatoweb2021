@@ -136,6 +136,7 @@ export default {
     link_buttons: [
         { text: "クラス展", link: "/class", icon: "mdi-account-group", color: "#FF9800"},
         { text: "スケジュール", link: "/schedule", icon: "mdi-clock", color: "#2196F3"},
+        { text: "イベント", link: "/event", icon: "mdi-bird", color: "#2196F3"},
         /* { text: "お知らせ", link: ""}, */
         /* { text: "販売", link: ""}, */
     ],

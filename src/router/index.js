@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Top from '@/components/Top.vue'
 import Class from '@/components/Class.vue'
 import Schedule from '@/components/Schedule.vue'
+import Event from '@/components/Event.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,15 @@ const routes = [
         component: Schedule,
         meta: {
             title: 'スケジュール | 鳩Web！',
+            desc: ''
+        },
+    },
+    {
+        path: '/event',
+        name: 'イベント',
+        component: Event,
+        meta: {
+            title: 'イベント | 鳩Web！',
             desc: ''
         },
     },
