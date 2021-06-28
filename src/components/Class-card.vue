@@ -39,29 +39,11 @@
             <!-- ステータス -->
             <v-card-text>
                 <v-chip
-                color="green"
-                class="mr-2"
-                outlined
-                x-small
-                v-if="isOpen"
-                >
-                    Open
-                </v-chip>
-                <v-chip
-                color="red"
-                class="mr-2"
-                outlined
-                x-small
-                v-else
-                >
-                    Closed
-                </v-chip>
-                <v-chip
                 :color="statusColor[api.status - 1]"
                 class="mr-2"
                 outlined
                 x-small
-                v-if="api && isOpen"
+                v-if="api"
                 >
                     <v-icon
                     v-for="i in api.status"
@@ -80,7 +62,7 @@
                 class="mr-2"
                 outlined
                 x-small
-                v-if="api && !isOpen"
+                v-if="api"
                 style="visibility: hidden;"
                 >
                     <v-icon
@@ -142,29 +124,11 @@
                 <!-- ステータス -->
                 <v-card-text>
                     <v-chip
-                    color="green"
-                    class="mr-2"
-                    outlined
-                    x-small
-                    v-if="isOpen"
-                    >
-                        Open
-                    </v-chip>
-                    <v-chip
-                    color="red"
-                    class="mr-2"
-                    outlined
-                    x-small
-                    v-else
-                    >
-                        Closed
-                    </v-chip>
-                    <v-chip
                     :color="statusColor[api.status - 1]"
                     class="mr-2"
                     outlined
                     x-small
-                    v-if="api && isOpen"
+                    v-if="api"
                     >
                         <v-icon
                         v-for="i in api.status"
@@ -210,9 +174,8 @@ export default {
   // titile     : クラス展の名前
   // src        : 画像のリンク
   // text       : クラス展の説明
-  // isOpen     : クラス展が開いているか
   // api        : APIの返り値
-  props: ['room', 'title', 'src', 'text', 'isOpen', 'api', 'classkey', 'tab'],
+  props: ['room', 'title', 'src', 'text', 'api', 'classkey', 'tab'],
   components: {
   },
   computed: {

@@ -43,11 +43,10 @@
                     <v-row>
                         <v-col
                         cols="6"
-                        v-for="class_card in card.classes.filter(c => (c.isOpen == true) || (!is_show_closed))"
+                        v-for="class_card in card.classes"
                         :key="class_card.key"
                         >
                             <classCard
-                            v-if="class_card.isOpen || !is_show_closed"
                             :tab="class_card.tab"
                             :classkey="class_card.key"
                             :room="class_card.room"
@@ -55,7 +54,6 @@
                             :src="class_card.src"
                             :text="class_card.text"
                             :api="class_ten_api[class_card.key]"
-                            :isOpen="class_card.isOpen"
                             @refreshFav="refreshFav"></classCard>
                         </v-col>
                     </v-row>
@@ -83,11 +81,10 @@
                         <v-row>
                             <v-col
                             cols="6"
-                            v-for="class_card in allClasses().filter(c => (c.isOpen == true) || (!is_show_closed))"
+                            v-for="class_card in allClasses()"
                             :key="class_card.key"
                             >
                                 <classCard
-                                v-if="class_card.isOpen || !is_show_closed"
                                 :tab="class_card.tab"
                                 :classkey="class_card.key"
                                 :room="class_card.room"
@@ -95,7 +92,7 @@
                                 :src="class_card.src"
                                 :text="class_card.text"
                                 :api="class_ten_api[class_card.key]"
-                                :isOpen="class_card.isOpen"></classCard>
+                                ></classCard>
                             </v-col>
                         </v-row>
                     </v-container>
