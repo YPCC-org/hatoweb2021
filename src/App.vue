@@ -53,7 +53,7 @@
         </v-navigation-drawer>
 
 
-        <transition mode=”out-in”>
+        <transition mode="out-in">
             <!--ヘッダー55px分下げる-->
             <router-view style="padding-top: 55px;"></router-view>
         </transition>
