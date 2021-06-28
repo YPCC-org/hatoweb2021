@@ -154,6 +154,7 @@ export default {
             let allCards = []
             for (const grade of this.cards){
                 allCards = allCards.concat(grade.classes);
+                console.log("cookie")
             }
             return allCards.filter(c => this.$cookies.isKey(c.key))
         },
@@ -194,50 +195,49 @@ export default {
                       key: "1A",
                       tab: 1,
                       room: "1-A",
-                      title: "1-A",
+                      title: "中学1年生より賢いの?",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      text: "ここには1-Aのクラス展の説明が入ります\n改行も\n可能です",
-                      isOpen: true
+                      text: "一気にたくさんのゲームができて楽しいです!\nぜひ来てください!",
                   },
                   {
                       key: "1B",
                       tab: 1,
                       room: "1-B",
-                      title: "1-B",
+                      title: "1B将軍塚古墳からの脱出",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: false
+                      text: "古墳からの脱出を目指してゲームに挑戦!",
                   },
                   {
                       key: "2A",
                       tab: 1,
                       room: "2-A",
-                      title: "2-A",
+                      title: "極限推理",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "ミステリ好きに贈る、本格派推理ゲーム\n貴方にこの謎がとけますか?",
                   },
                   {
                       key: "2B",
                       tab: 1,
                       room: "2-B",
-                      title: "2-B",
+                      title: "VS屋代",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "VS嵐で人気だった2つのゲームを\n仲間と協力して高得点を目指そう!",
                   },
                   {
                       key: "3A",
                       tab: 1,
                       room: "3-A",
-                      title: "3-A",
+                      title: "夜に賭ける",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: false
+                      text: "遂に、日本に登場したカジノ・IR!\n様々な賭け要素を生かして、日本経済を動かす大富豪になろう!※賭けるのは実際の通貨ではありません",
                   },
                   {
                       key: "3B",
                       tab: 1,
                       room: "3-B",
-                      title: "3-B",
+                      title: "MAID",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "メイドが鬼になってしまった世界で、\nメイドに追いかけられながら「心のリボン」を探して\nメイドを救い出せ!",
                   },
               ]
           },
@@ -247,57 +247,57 @@ export default {
                       key: "11",
                       tab: 2,
                       room: "1-1",
-                      title: "1-1",
+                      title: "占いの館",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "おはようでやんす。突然ですが、あなたは占いを信じますか信じないなら1度占われてみませんか?\nそうしたら何かが変わるはずです。ほな、いただきまぁす。",
                   },
                   {
                       key: "12",
                       tab: 2,
                       room: "1-2",
-                      title: "1-2",
+                      title: "Make one page of memories",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "バルーンを使った写真スポットです!!\nカッコ可愛い写真を沢山撮りに来てください!!",
                   },
                   {
                       key: "13",
                       tab: 2,
                       room: "1-3",
-                      title: "1-3",
+                      title: "ユニバーサルスタジオ",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "インスタ映えスポットで写真を撮ったり\nアニメや任天堂の世界に入り込めちゃう?!",
                   },
                   {
                       key: "14",
                       tab: 2,
                       room: "1-4",
-                      title: "1-4",
+                      title: "トイストーリーマニア",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "ディズニーの人気アトラクション「トイストーリーマニア」がモチーフのシューティングゲーム・ストラックアウトです!",
                   },
                   {
                       key: "15",
                       tab: 2,
                       room: "1-5",
-                      title: "1-5",
+                      title: "カジノ",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "お菓子の景品も用意しているので、ぜひ来てください!",
                   },
                   {
                       key: "16",
                       tab: 2,
                       room: "1-6",
-                      title: "1-6",
+                      title: "インディージョーンズ",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "インディージョーンズをテーマに、謎解き・射的・輪投げ・わんわんパニックを行います!それぞれにクリア条件をつけ、クリア回数によって景品をゲットできます!あなたは...この試練をクリアすることが出来るのか?お試しください!",
                   },
                   {
                       key: "17",
                       tab: 2,
                       room: "1-7",
-                      title: "1-7",
+                      title: "FEOラボから世界へ!",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "ここでは新たな化学物質を見つけるために日々奮闘しています!果たして、FEOラボの意味とは?",
                   },
               ]
           },
@@ -307,57 +307,57 @@ export default {
                       key: "21",
                       tab: 3,
                       room: "232",
-                      title: "2-1",
+                      title: "脱出ゲームDEYO!",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "TV番組\"脱出ゲームDERO!\"のパロディ",
                   },
                   {
                       key: "22",
                       tab: 3,
                       room: "233",
-                      title: "2-2",
+                      title: "射的",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "こんにちは!2年2組です!私たちは、2棟の3階で射的を行っています。あなたが欲しい商品があるかもしれません!ぜひ来てゲットしていってください!!!",
                   },
                   {
                       key: "23",
                       tab: 3,
                       room: "234",
-                      title: "2-3",
+                      title: "トイ・ストーリーマニアに行きたい人全員集合!",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "的を倒して得点ゲット!\n2-3がつくるトイ・ストーリーマニアの世界、ぜひお楽しみあれ!",
                   },
                   {
                       key: "24",
                       tab: 3,
                       room: "212",
-                      title: "2-4",
+                      title: "犯人の犯沢さん",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "たまには悪役だっていいじゃない!",
                   },
                   {
                       key: "25",
                       tab: 3,
                       room: "213",
-                      title: "2-5",
+                      title: "リアル脱出ゲーム",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "いろいろな謎を準備して待ってます\nぜひお越しください!!︎",
                   },
                   {
                       key: "26",
                       tab: 3,
                       room: "223",
-                      title: "2-6",
+                      title: "トランプの兵士たちに見つからないようにゴールを目指せ!",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "不思議の国に迷い込んでしまった!?\nトランプの兵士に見つからないように4つの謎を解いて脱出を目指せ!",
                   },
                   {
                       key: "27",
                       tab: 3,
                       room: "224",
-                      title: "2-7",
+                      title: "カジノ",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "教室という狭い空間ですが、ギャンブルの快感を味わって いってください!",
                   },
               ]
           },
@@ -367,57 +367,57 @@ export default {
                       key: "31",
                       tab: 4,
                       room: "3-1",
-                      title: "3-1",
+                      title: "Bismuth Labyrinth",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "クラスにて人気だった2案の折衷です。\n不自然さには目を瞑ってください。",
                   },
                   {
                       key: "32",
                       tab: 4,
                       room: "3-2",
-                      title: "3-2",
+                      title: "モンスターズインク",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "モンスターズインクのアトラクションが楽しめます。\nぜひ来て下さい。",
                   },
                   {
                       key: "33",
                       tab: 4,
                       room: "3-3",
-                      title: "3-3",
+                      title: "縁日",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "私たち3年3組は縁日をやります!\nみんながドキドキワクワクするような屋台が盛りだくさん!\n楽しめること間違いなし!\n1棟に来たらちょっと立ち寄ってみないかい?",
                   },
                   {
                       key: "34",
                       tab: 4,
                       room: "3-4",
-                      title: "3-4",
+                      title: "クイズ大会",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "色んなジャンルがあるよ!\nあなたは全問正解できるかな?",
                   },
                   {
                       key: "35",
                       tab: 4,
                       room: "3-5",
-                      title: "3-5",
+                      title: "ゴーストバスターズ",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "3年5組です!\n皆さんが楽しめるアトラクションを用意して待っているのでぜひ来てください!",
                   },
                   {
                       key: "36",
                       tab: 4,
                       room: "3-6",
-                      title: "3-6",
+                      title: "プーさんのハニーハント",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "ハニーポットに乗って、プーさんと一緒にハチミツを探そう!",
                   },
                   {
                       key: "37",
                       tab: 4,
                       room: "3-7",
-                      title: "3-7",
+                      title: "ドクター7〜恐怖の病棟〜",
                       src: require("@/assets/class_image/1/1-1.jpg"),
-                      isOpen: true
+                      text: "とある呪われた病院、そこに踏み入れたら...",
                   },
               ]
           },
