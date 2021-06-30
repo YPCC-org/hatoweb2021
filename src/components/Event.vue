@@ -1,5 +1,5 @@
 <template>
-  <div style="top: 55px;">
+  <div>
     <v-row class="mx-auto pt-3">
       <v-col cols="11" md="6" class="mx-auto py-0 mt-3">
         <v-card outlined>
@@ -68,7 +68,7 @@
                 </v-card>
               </v-col>
 
-              <v-col cols="11" md="6" class="mx-auto py-0 mt-3">
+              <v-col cols="11" md="6" class="mx-auto py-0 my-3">
                 <v-card outlined>
                   <v-card-title>
                     ビンゴ
@@ -157,7 +157,7 @@
                 </v-card>
               </v-col>
 
-              <v-col cols="11" md="6" class="mx-auto py-0 mt-3">
+              <v-col cols="11" md="6" class="mx-auto py-0 my-3">
                 <v-card outlined>
                   <v-card-title>
                     中夜祭全校企画
@@ -172,7 +172,7 @@
         </v-card>
       </v-col>
 
-      <v-col cols="11" md="6" class="mx-auto py-0 mt-3">
+      <v-col cols="11" md="6" class="mx-auto py-0 my-3">
         <v-card outlined>
           <v-card-title>
             後夜祭
@@ -202,7 +202,7 @@
                 </v-card>
               </v-col>
 
-              <v-col cols="11" md="6" class="mx-auto py-0 mt-3">
+              <v-col cols="11" md="6" class="mx-auto py-0 my-3">
                 <v-card outlined>
                   <v-card-title>
                     全校ダンス
