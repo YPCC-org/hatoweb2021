@@ -45,6 +45,12 @@
                     <v-list-item link to="event">
                         <v-list-item-title>イベント</v-list-item-title>
                     </v-list-item>
+                    <v-list-item link to="schoolex">
+                        <v-list-item-title>校内展示</v-list-item-title>
+                    </v-list-item>
+                    <v-list-item link to="stage">
+                        <v-list-item-title>ステージ</v-list-item-title>
+                    </v-list-item>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>

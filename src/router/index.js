@@ -5,6 +5,7 @@ import Top from '@/components/Top.vue'
 import Class from '@/components/Class.vue'
 import Schedule from '@/components/Schedule.vue'
 import Event from '@/components/Event.vue'
+import SchoolEx from '@/components/SchoolExhibition.vue'
 
 Vue.use(VueRouter)
 
@@ -42,6 +43,24 @@ const routes = [
         component: Event,
         meta: {
             title: 'イベント | 鳩Web！',
+            desc: ''
+        },
+    },
+    {
+        path: '/schoolex',
+        name: '校内展示',
+        component: SchoolEx,
+        meta: {
+            title: '校内展示 | 鳩Web！',
+            desc: ''
+        },
+    },
+    {
+        path: '/stage',
+        name: 'ステージ',
+        component: SchoolEx,
+        meta: {
+            title: 'ステージ | 鳩Web！',
             desc: ''
         },
     },

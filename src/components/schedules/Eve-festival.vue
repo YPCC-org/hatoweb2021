@@ -1,5 +1,27 @@
 <template>
   <div>
+    スケジュール
+    <v-card flat>
+      <ul>
+        <li>
+          14:40~15:00<br>
+          応援団入場(前夜祭ルール説明)、開祭宣言
+        </li>
+        <li>
+          15:00~15:30<br>
+          軽音班、ダンス同好会発表
+        </li>
+        <li>
+          15:30~18:40<br>
+          クラス発表
+        </li>
+        <li>
+          18:40~18:50<br>
+          閉祭宣言、下校指導
+        </li>
+      </ul>
+    </v-card>
+    <br>
     ダンス
     <v-simple-table>
       <template v-slot:default>

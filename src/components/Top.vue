@@ -50,26 +50,8 @@
             </v-col>
         </v-row>
 
-        <!-- ご挨拶 -->
-        <v-row class="mx-auto py-3">
-            <v-col cols="11" md="10" class="mx-auto py-0">
-                <v-card
-                flat
-                class="py-0 my-0 rounded-2 px-3"
-                style="border: 2.5px solid #009688;"
-                >
-                    <v-card-title>ご挨拶</v-card-title>
-                    <v-card-text>
-                        あいさつの文章を<br>
-                        入力<br>
-                        することができます<br>
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
-
         <!-- お知らせ -->
-        <v-row class="mx-auto">
+        <v-row class="mx-auto pt-3">
             <v-col cols="11" md="10" class="mx-auto py-0 pb-3 px-3">
                 <v-card
                 max-height="300"
@@ -137,6 +119,8 @@ export default {
         { text: "クラス展", link: "/class", icon: "mdi-account-group", color: "#FF9800"},
         { text: "スケジュール", link: "/schedule", icon: "mdi-clock", color: "#2196F3"},
         { text: "イベント", link: "/event", icon: "mdi-bird", color: "#2196F3"},
+        { text: "校内展示", link: "/schoolex", icon: "mdi-bird", color: "#2196F3"},
+        { text: "ステージ", link: "/stage", icon: "mdi-bird", color: "#2196F3"},
         /* { text: "お知らせ", link: ""}, */
         /* { text: "販売", link: ""}, */
     ],
