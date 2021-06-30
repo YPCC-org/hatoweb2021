@@ -51,6 +51,9 @@
                     <v-list-item link to="stage">
                         <v-list-item-title>ステージ</v-list-item-title>
                     </v-list-item>
+                    <v-list-item link to="about">
+                        <v-list-item-title>このページについて</v-list-item-title>
+                    </v-list-item>
                 </v-list-item-group>
             </v-list>
         </v-navigation-drawer>

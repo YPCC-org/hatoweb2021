@@ -121,8 +121,7 @@ export default {
         { text: "イベント", link: "/event", icon: "mdi-bird", color: "#2196F3"},
         { text: "校内展示", link: "/schoolex", icon: "mdi-bird", color: "#2196F3"},
         { text: "ステージ", link: "/stage", icon: "mdi-bird", color: "#2196F3"},
-        /* { text: "お知らせ", link: ""}, */
-        /* { text: "販売", link: ""}, */
+        { text: "このページについて", link: "/about", icon: "mdi-bird", color: "#2196F3"},
     ],
   }),
 };
