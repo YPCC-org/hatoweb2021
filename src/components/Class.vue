@@ -200,7 +200,7 @@ export default {
                       key: "1B",
                       tab: 1,
                       room: "1-B",
-                      title: "1B将軍塚古墳からの脱出",
+                      title: "将軍塚古墳からの脱出",
                       src: require("@/assets/class_image/1/1-1.jpg"),
                       text: "古墳からの脱出を目指してゲームに挑戦!",
                   },
@@ -245,7 +245,7 @@ export default {
                       tab: 2,
                       room: "1-1",
                       title: "占いの館",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/11.jpg"),
                       text: "おはようでやんす。突然ですが、あなたは占いを信じますか信じないなら1度占われてみませんか?\nそうしたら何かが変わるはずです。ほな、いただきまぁす。",
                   },
                   {
@@ -261,7 +261,7 @@ export default {
                       tab: 2,
                       room: "1-3",
                       title: "ユニバーサルスタジオ",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/13.jpg"),
                       text: "インスタ映えスポットで写真を撮ったり\nアニメや任天堂の世界に入り込めちゃう?!",
                   },
                   {
@@ -269,7 +269,7 @@ export default {
                       tab: 2,
                       room: "1-4",
                       title: "トイストーリーマニア",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/14.jpg"),
                       text: "ディズニーの人気アトラクション「トイストーリーマニア」がモチーフのシューティングゲーム・ストラックアウトです!",
                   },
                   {
@@ -293,7 +293,7 @@ export default {
                       tab: 2,
                       room: "1-7",
                       title: "FEOラボから世界へ!",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/17.jpg"),
                       text: "ここでは新たな化学物質を見つけるために日々奮闘しています!果たして、FEOラボの意味とは?",
                   },
               ]
@@ -305,7 +305,7 @@ export default {
                       tab: 3,
                       room: "232",
                       title: "脱出ゲームDEYO!",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/21.jpg"),
                       text: "TV番組\"脱出ゲームDERO!\"のパロディ",
                   },
                   {
@@ -329,7 +329,7 @@ export default {
                       tab: 3,
                       room: "212",
                       title: "犯人の犯沢さん",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/24.jpg"),
                       text: "たまには悪役だっていいじゃない!",
                   },
                   {
@@ -337,7 +337,7 @@ export default {
                       tab: 3,
                       room: "213",
                       title: "リアル脱出ゲーム",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/25.jpg"),
                       text: "いろいろな謎を準備して待ってます\nぜひお越しください!!︎",
                   },
                   {
@@ -353,7 +353,7 @@ export default {
                       tab: 3,
                       room: "224",
                       title: "カジノ",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/27.jpg"),
                       text: "教室という狭い空間ですが、ギャンブルの快感を味わって いってください!",
                   },
               ]
@@ -365,7 +365,7 @@ export default {
                       tab: 4,
                       room: "3-1",
                       title: "Bismuth Labyrinth",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/31.jpg"),
                       text: "クラスにて人気だった2案の折衷です。\n不自然さには目を瞑ってください。",
                   },
                   {
@@ -381,7 +381,7 @@ export default {
                       tab: 4,
                       room: "3-3",
                       title: "縁日",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/33.jpg"),
                       text: "私たち3年3組は縁日をやります!\nみんながドキドキワクワクするような屋台が盛りだくさん!\n楽しめること間違いなし!\n1棟に来たらちょっと立ち寄ってみないかい?",
                   },
                   {
