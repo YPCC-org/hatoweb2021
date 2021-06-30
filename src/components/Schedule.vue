@@ -24,6 +24,9 @@
                 <v-tab href="#tab-3">
                     7/4 (日)
                 </v-tab>
+                <v-tab href="#tab-4">
+                  前夜祭
+                </v-tab>
             </v-tabs>
         </v-app-bar>
 
@@ -45,6 +48,11 @@
                     <Sun class="col-12"></Sun>
                 </v-container>
             </swiper-slide>
+            <swiper-slide>
+                <v-container>
+                    <EveFest class="col-12"></EveFest>
+                </v-container>
+            </swiper-slide>
         </swiper>
     </div>
 </template>
@@ -54,6 +62,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import Fri from '@/components/schedules/Fri.vue'
 import Sad from '@/components/schedules/Sad.vue'
 import Sun from '@/components/schedules/Sun.vue'
+import EveFest from '@/components/schedules/Eve-festival.vue'
 
 import 'swiper/swiper-bundle.css'
 
@@ -66,6 +75,7 @@ export default {
         Fri,
         Sad,
         Sun,
+        EveFest,
         Swiper,
         SwiperSlide,
     },
@@ -119,7 +129,7 @@ export default {
                 enabled: true,
             },
         },
-        tabnum: 3,
+        tabnum: 4,
         currentTab: null,
     }),
 };
