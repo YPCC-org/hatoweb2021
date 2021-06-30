@@ -6,6 +6,7 @@ import Class from '@/components/Class.vue'
 import Schedule from '@/components/Schedule.vue'
 import Event from '@/components/Event.vue'
 import SchoolEx from '@/components/SchoolExhibition.vue'
+import Stage from '@/components/Stage.vue'
 
 Vue.use(VueRouter)
 
@@ -58,7 +59,7 @@ const routes = [
     {
         path: '/stage',
         name: 'ステージ',
-        component: SchoolEx,
+        component: Stage,
         meta: {
             title: 'ステージ | 鳩Web！',
             desc: ''
