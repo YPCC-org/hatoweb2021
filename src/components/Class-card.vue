@@ -9,29 +9,20 @@
                 <v-card-subtitle style="position: absolute; top; 0; left: 0; z-index: 1; padding: 0 0.5em; background-color: white; border-radius: 0 0 0.5em 0;">{{ room }}</v-card-subtitle>
                 <!-- 画像 -->
                 <v-img contain height="100%" :src="src" @click="popupEnable = true"></v-img>
-            </div>
-            <div style="position: relative;">
                 <div @click="popupEnable = true;checkIsFav()">
                     <!-- クラス展の名前 -->
-                    <v-card-subtitle style="width: calc(100% - 30px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                    <v-card-subtitle style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                         {{ title }}
                     </v-card-subtitle>
                 </div>
                 <!-- お気に入りボタン -->
-                <v-card-actions style="position: absolute; top: 0; right: 0;">
+                <v-card-actions style="float: right; position: absolute; right: 0px; top: 0px">
                     <v-btn
                     icon
                     :color="favoriteColor[isFav]"
                     @click="favorite"
                     >
                         <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-                    <v-btn
-                    icon
-                    v-if="shareable"
-                    @click="share"
-                    >
-                        <v-icon>mdi-share-variant</v-icon>
                     </v-btn>
                 </v-card-actions>
             </div>
@@ -87,13 +78,6 @@
                             @click="favorite()"
                             >
                                 <v-icon>mdi-heart</v-icon>
-                            </v-btn>
-                            <v-btn
-                            icon
-                            v-if="shareable"
-                            @click="share"
-                            >
-                                <v-icon>mdi-share-variant</v-icon>
                             </v-btn>
                         </td>
                     </tr></table>
@@ -200,17 +184,14 @@ export default {
   },
   mounted () {
     this.checkIsFav();
-    if (window.navigator.share) {
-        this.shareable = true;
-    }
   },
   updated () {
     this.checkIsFav();
   },
   methods: {
-    popupFunc: function(arg) {
-        alert(arg)
-    },
+    // popupFunc: function(arg) {
+    //     alert(arg)
+    // },
     // Tabが読み込まれたとき発火
     checkIsFav: function() {
     console.log("updated")
@@ -233,26 +214,12 @@ export default {
             this.$emit("refreshFav");
         }
     },
-    share: function() {
-        let a = document.createElement('a');
-        a.href = window.location.href;
-        let url = String(window.location.href).replace(window.location.hash, '') + '#/class?tab=' + this.tab + '&class=' + this.classkey;
-        window.navigator.share({
-            url: url,
-        })
-        .catch((error) => {
-              // シェアせず終了した場合もここに入ってくる。
-              console.log('Error sharing', error);
-        }
-        );
-    },
   },
   data: () => ({
     favoriteColor: ["#616161", "pink"],
     statusColor: ["blue", "cyan", "green", "orange", "red"],
     isFav: 0,
     isOpenFavSnackBar: false,
-    shareable: false,
   }),
 };
 </script>
