@@ -60,6 +60,10 @@
 </template>
 
 <style>
+    html {
+        height: 100%;
+        background-color: #f4f5f7;
+    }
     .v-enter-active, .v-leave-active {
             transition: opacity .3s;
         }
