@@ -117,10 +117,10 @@ export default {
     link_buttons: [
         { text: "クラス展", link: "/class", icon: "mdi-account-group", color: "#FF9800"},
         { text: "スケジュール", link: "/schedule", icon: "mdi-clock", color: "#2196F3"},
-        { text: "イベント", link: "/event", icon: "mdi-bird", color: "#2196F3"},
-        { text: "校内展示", link: "/schoolex", icon: "mdi-bird", color: "#2196F3"},
-        { text: "ステージ", link: "/stage", icon: "mdi-bird", color: "#2196F3"},
-        { text: "このページについて", link: "/about", icon: "mdi-bird", color: "#2196F3"},
+        { text: "イベント", link: "/event", icon: "mdi-calendar-outline", color: "#4CAF50"},
+        { text: "校内展示", link: "/schoolex", icon: "mdi-warehouse", color: "#E91E63"},
+        { text: "ステージ", link: "/stage", icon: "mdi-spotlight-beam", color: "#9C27B0"},
+        { text: "このページについて", link: "/about", icon: "mdi-information-outline", color: "#3F51B5"},
     ],
   }),
 };
