@@ -29,26 +29,17 @@
             <div @click="popupEnable = true;checkIsFav()">
             <!-- ステータス -->
             <v-card-text>
-                <v-chip
-                :color="statusColor[api.status - 1]"
+                <div
                 class="mr-2"
-                outlined
-                x-small
                 v-if="api"
                 >
+                    混雑度:
                     <v-icon
                     v-for="i in api.status"
                     :key="'1-' + i"
                     :color="statusColor[api.status - 1]"
-                    small
-                    style="width: 0.5em;">mdi-human-male</v-icon>
-                    <v-icon
-                    v-for="i in (5 - api.status)"
-                    :key="'2-' + i"
-                    color="grey"
-                    small
-                    style="width: 0.5em;">mdi-human-male</v-icon>
-                </v-chip>
+                    x-small>mdi-circle</v-icon>
+                </div>
             </v-card-text>
             </div>
         </v-card>
@@ -94,26 +85,17 @@
                 </v-card-text>
                 <!-- ステータス -->
                 <v-card-text>
-                    <v-chip
-                    :color="statusColor[api.status - 1]"
+                    <div
                     class="mr-2"
-                    outlined
-                    x-small
                     v-if="api"
                     >
+                        混雑度:
                         <v-icon
                         v-for="i in api.status"
-                        :key="'3-' + i"
+                        :key="'2-' + i"
                         :color="statusColor[api.status - 1]"
-                        small
-                        style="width: 0.5em;">mdi-human-male</v-icon>
-                        <v-icon
-                        v-for="i in (5 - api.status)"
-                        :key="'4-' + i"
-                        color="grey"
-                        small
-                        style="width: 0.5em;">mdi-human-male</v-icon>
-                    </v-chip>
+                        x-small>mdi-circle</v-icon>
+                    </div>
                 </v-card-text>
                 <!-- 説明 -->
                 <v-card-text style="white-space: pre-wrap">
