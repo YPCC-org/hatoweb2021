@@ -193,7 +193,7 @@ export default {
                       tab: 1,
                       room: "1-A",
                       title: "中学1年生より賢いの?",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/1A.jpg"),
                       text: "一気にたくさんのゲームができて楽しいです!\nぜひ来てください!",
                   },
                   {
@@ -225,7 +225,7 @@ export default {
                       tab: 1,
                       room: "3-A",
                       title: "夜に賭ける",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/3A.jpg"),
                       text: "遂に、日本に登場したカジノ・IR!\n様々な賭け要素を生かして、日本経済を動かす大富豪になろう!※賭けるのは実際の通貨ではありません",
                   },
                   {
@@ -277,7 +277,7 @@ export default {
                       tab: 2,
                       room: "1-5",
                       title: "カジノ",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/15.jpg"),
                       text: "お菓子の景品も用意しているので、ぜひ来てください!",
                   },
                   {
@@ -313,7 +313,7 @@ export default {
                       tab: 3,
                       room: "233",
                       title: "射的",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/22.jpg"),
                       text: "こんにちは!2年2組です!私たちは、2棟の3階で射的を行っています。あなたが欲しい商品があるかもしれません!ぜひ来てゲットしていってください!!!",
                   },
                   {
@@ -373,7 +373,7 @@ export default {
                       tab: 4,
                       room: "3-2",
                       title: "モンスターズインク",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/32.jpg"),
                       text: "モンスターズインクのアトラクションが楽しめます。\nぜひ来て下さい。",
                   },
                   {
@@ -397,7 +397,7 @@ export default {
                       tab: 4,
                       room: "3-5",
                       title: "ゴーストバスターズ",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/35.jpg"),
                       text: "3年5組です!\n皆さんが楽しめるアトラクションを用意して待っているのでぜひ来てください!",
                   },
                   {
@@ -405,7 +405,7 @@ export default {
                       tab: 4,
                       room: "3-6",
                       title: "プーさんのハニーハント",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/36.jpg"),
                       text: "ハニーポットに乗って、プーさんと一緒にハチミツを探そう!",
                   },
                   {
