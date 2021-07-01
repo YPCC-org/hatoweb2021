@@ -82,6 +82,9 @@
             </v-col>
         </v-row>
 
+        <div class="text-center my-3">
+            <small>Copyright © 2021 屋代高校PC同好会結成会</small>
+        </div>
     </div>
 </template>
 
