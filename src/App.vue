@@ -118,8 +118,10 @@ export default {
         '$route' (routeInstance, from) {
             from;
             this.createTitleDesc(routeInstance);
+        },
+        '$route.path' () {
             window.scrollTo(0, 0);
-        }
+        },
     },
 };
 </script>
