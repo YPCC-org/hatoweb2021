@@ -118,6 +118,7 @@ export default {
         '$route' (routeInstance, from) {
             from;
             this.createTitleDesc(routeInstance);
+            window.scrollTo(0, 0);
         }
     },
 };
