@@ -38,13 +38,13 @@
                 >
                     <v-icon
                     v-for="i in api.status"
-                    :key="i"
+                    :key="'1-' + i"
                     :color="statusColor[api.status - 1]"
                     small
                     style="width: 0.5em;">mdi-human-male</v-icon>
                     <v-icon
                     v-for="i in (5 - api.status)"
-                    :key="i"
+                    :key="'2-' + i"
                     color="grey"
                     small
                     style="width: 0.5em;">mdi-human-male</v-icon>
@@ -103,13 +103,13 @@
                     >
                         <v-icon
                         v-for="i in api.status"
-                        :key="i"
+                        :key="'3-' + i"
                         :color="statusColor[api.status - 1]"
                         small
                         style="width: 0.5em;">mdi-human-male</v-icon>
                         <v-icon
                         v-for="i in (5 - api.status)"
-                        :key="i"
+                        :key="'4-' + i"
                         color="grey"
                         small
                         style="width: 0.5em;">mdi-human-male</v-icon>
