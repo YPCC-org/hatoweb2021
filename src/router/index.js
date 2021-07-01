@@ -68,7 +68,7 @@ const routes = [
     },
     {
         path: '/about',
-        name: 'このページにこの',
+        name: 'このページについて',
         component: About,
         meta: {
             title: 'このページについて | 鳩Web！',
