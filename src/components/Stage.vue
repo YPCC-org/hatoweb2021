@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row class="mx-auto pt-3">
+    <v-row class="mx-auto py-3">
       <v-col cols="11" md="6" class="mx-auto py-0 mt-3" v-for="c in stages" :key="c.name">
         <v-card outlined style="white-space:pre-wrap; word-wrap:break-word;">
           <v-card-title>
