@@ -1,2 +1,8 @@
 npm run build
-cd ../hatoweb-test && rm -rf ./css ./favicon.ico ./img ./index.html ./js && mv ../hatoweb2021/dist/* ./ && git add . && git commit -m "deploy" && git push
+currentDir=`pwd`
+cd $1
+rm -rf *
+mv $currentDir/dist/* ./
+git add -A
+git commit -m 'deploy'
+git push
