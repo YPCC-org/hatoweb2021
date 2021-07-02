@@ -209,7 +209,7 @@ export default {
                       tab: 1,
                       room: "2-A",
                       title: "極限推理",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/2A.jpg"),
                       text: "私達は「極限推理」と題した推理ゲームを行います。廃校と山奥のコテージ、二種類の殺人は世界線も内容も全く違うので、ぜひどちらにも挑戦してみて下さい。さらに今回は、謎を解いてステージをクリアするまでのタイムを競い、上位3グループを教室前のホワイトボードに掲示します。目指せ、ランクイン！狂気の殺人犯を、見つけ出せ！",
                   },
                   {
@@ -217,7 +217,7 @@ export default {
                       tab: 1,
                       room: "2-B",
                       title: "VS屋代",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/2B.jpg"),
                       text: "あなたは、テレビ番組「VS嵐」を見たことがありますか？2年B組では、「VS屋代」という企画を行います。この企画では、VS嵐の競技である、「コロコロバイキング」と、「カタカナ嵐」をプレイすることができます。ぜひ、来てください！",
                   },
                   {
