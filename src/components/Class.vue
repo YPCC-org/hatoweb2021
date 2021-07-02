@@ -389,7 +389,7 @@ export default {
                       tab: 4,
                       room: "133",
                       title: "なぞとけ どうぶつの森",
-                      src: require("@/assets/class_image/1/1-1.jpg"),
+                      src: require("@/assets/class_image/34.jpg"),
                       text: "『どうぶつの森』の世界の住人のあなた。「たぬきち商店」に借りたお金の支払い期限が迫っているのに、あと100000ベル足りないだなも〜やなんとかして残りのお金を稼ぐだなも！宝探しやストラックアウト、謎解きで「ベル」を稼いでローンを完済しよう！",
                   },
                   {
