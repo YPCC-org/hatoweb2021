@@ -12,7 +12,7 @@
                 {{ this.$route.name }}
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon link href="https://www.instagram.com/p/CNo7BAVBkJN/">
+            <v-btn icon link href="https://instagram.com/yashiro_hatofest">
                 <v-icon>
                     mdi-instagram
                 </v-icon>
