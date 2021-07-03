@@ -115,8 +115,8 @@ export default {
                         if (this.$route.query.tab != undefined) {
                             ctab = 'tab-' + this.$route.query.tab;
                         } else {
-                            this.$router.replace({ query: { tab: '2' } });
-                            ctab = 'tab-2';
+                            this.$router.replace({ query: { tab: '3' } });
+                            ctab = 'tab-3';
                         }
                     }
                     return ctab
